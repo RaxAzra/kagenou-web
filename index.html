@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Kagenou Family</title>
+  <meta name="description" content="-" />
+  <meta name="theme-color" content="#a64eff" />
+  <meta name="author" content="Kagenou | Dev Team" />
+
+  <!-- SEO & Sosial Media -->
+  <meta property="og:title" content="Kagenou Family" />
+  <meta property="og:description" content="Creator Anime Society" />
+  <meta property="og:image" content="source/komunitas.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ajrahhh.my.id/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kagenou Family" />
+  <meta name="twitter:description" content="Creator Anime Society" />
+  <meta name="twitter:image" content="source/komunitas.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="source/komunitas.jpg" type="image/png" />
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+  <body class="scroll-locked">
+  <div class="aurora-section-wrapper">
+    <div class="aurora-wrapper">
+      <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+        <div class="aurora aurora-4"></div>
+        <div class="aurora aurora-5"></div>
+        <div class="aurora aurora-6"></div>
+      </div>
+    </div>
+
+  <!-- Hero Section (tampilan awal) -->
+<section class="hero animate-on-scroll">
+
+  <div class="text-wrapper animate-on-scroll">
+    <h2>Hello, Welcome in</h2>
+    <h1>Kagenou Family</h1>
+  </div>
+
+  <a href="#" class="home-button animate-on-scroll" onclick="scrollToHome(event)">
+    <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
+    </svg>
+    <span>Home</span>
+  </a>
+</section>
+
+<!-- Bagian Bawah -->
+<section id="home" class="home-section fancy-home animate-on-scroll">
+  <h2 class="gallery-title">Sebuah Marga Kreator <span class="gold-text">Anime</span>, <span class="gold-text">Game</span>, <span class="gold-text">JJ</span> atau lainnya.</h2>
+
+  <section class="card-gallery">
+    <div class="cards">
+      <img src="source/gen_1.jpg" alt="gen_1" onclick="openCard(0)">
+      <img src="source/gen_2.jpg" alt="gen_2" onclick="openCard(1)">
+      <img src="source/gen_3.jpg" alt="gen_3" onclick="openCard(2)">
+      <img src="source/leader.jpg" alt="leader" onclick="openCard(3)">
+      <img src="source/mlbb.jpg" alt="mlbb" onclick="openCard(4)">
+      <img src="source/ff.jpg" alt="ff" onclick="openCard(5)">
+      <img src="source/editor.jpg" alt="editor" onclick="openCard(6)">
+      <img src="source/bot.jpg" alt="bot" onclick="openCard(7)">
+      <img src="source/activity.jpg" alt="activity" onclick="openCard(8)">
+    </div>
+  </section>
+  <div class="scroll-down-btn">
+    <a href="#tutorial" onclick="document.querySelector('#tutorial').scrollIntoView({ behavior: 'smooth' }); return false;">
+      <svg class="scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Modal Galeri (diletakkan di luar .gallery-container) -->
+<div id="cardModal" class="card-modal" onclick="closeCard()">
+  <div class="card-content" onclick="event.stopPropagation()">
+    <img id="modalImg" src="" alt="">
+    <h3 id="modalTitle">Judul</h3>
+    <p id="modalDesc">Deskripsi</p>
+  </div>
+</div>
+
+<section id="tutorial" class="timeline-section animate-on-scroll">
+  <h2 class="timeline-title">Tutorial Seleksi Kagenou</h2>
+  <div class="timeline-container">
+
+    <div class="timeline-item animate-step left">
+    <div class="timeline-content">
+      <div class="icon-circle">1</div>
+      <div class="text">
+        Silakan bergabung di Grup Seleksi Kagenou
+        <a href="https://chat.whatsapp.com/ABC123DEF456GHI" target="_blank" style="color:#a64eff; font-weight:600;">
+          Klik di sini
+        </a>.
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item animate-step right">
+    <div class="timeline-content">
+      <div class="text">Sesudah masuk. Klik " Lanjutkan " yang dikirim oleh Bot resmi Kagenou ( Sumika ).</div>
+      <div class="icon-circle">2</div>
+    </div>
+  </div>
+
+  <div class="timeline-item animate-step left">
+    <div class="timeline-content">
+      <div class="icon-circle">3</div>
+      <div class="text">Ikuti petunjuk dari Bot Sumika atau ketik Perintah " .seleksi "</div>
+    </div>
+  </div>
+
+  <div class="timeline-item animate-step right">
+    <div class="timeline-content">
+      <div class="text">Jika sudah terselesaikan. Silakan menunggu balasan dari Admin.</div>
+      <div class="icon-circle">4</div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- Bagian Admin -->
+<section id="admin-section" class="admin-section">
+  <h2>Admin Kagenou</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide admin-card">
+        <img src="source/logo.png" alt="Sora">
+        <h3>Sora</h3>
+        <p>Keamanan</p>
+        <div class="admin-stats">
+          <p><strong>TikTok:</strong> <span id="sora-username">@loading</span></p>
+          <p><strong>Followers:</strong> <span id="sora-followers">...</span></p>
+          <p><strong>Likes:</strong> <span id="sora-likes">...</span></p>
+        </div>
+      </div>
+
+      <div class="swiper-slide admin-card">
+        <img src="source/logo.png" alt="Ranz">
+        <h3>Ranz</h3>
+        <p>Keamanan</p>
+      </div>
+
+      <div class="swiper-slide admin-card">
+        <img src="source/logo.png" alt="Sena">
+        <h3>Sora S.DEV</h3>
+        <p>Keamanan</p>
+      </div>
+
+      <div class="swiper-slide admin-card owner">
+        <img src="source/logo.png" alt="Ryy Kagenou>"
+        <h3>Ryy Kagenou</h3>
+        <p>Pemilik</p>
+      </div>
+
+      <div class="swiper-slide admin-card">
+        <img src="source/logo.png" alt="Kram">
+        <h3>Ranz S.KOM</h3>
+        <p>Keamanan II</p>
+      </div>
+
+      <div class="swiper-slide admin-card">
+        <img src="source/logo.png" alt="Miruki">
+        <h3>Miruki</h3>
+        <p>Kolaborasi Member</p>
+      </div>
+
+      <div class="swiper-slide admin-card">
+        <img src="source/logo.png" alt="Paksi">
+        <h3>Paksi</h3>
+        <p>Kolaborasi Member</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="kagenou-footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Kagenou Family. All rights reversed.</p>
+    <ul class="footer-links">
+      <li>
+        <a href="https://www.tiktok.com/@kagenoufamily" target="_blank" aria-label="TikTok">
+          <svg class="icon" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M34.5 6c-2.2 0-4-1.8-4-4h-6c0 7.5 6 13.5 13.5 13.5v-6c-1.5 0-3.2-.5-4.5-1.5v22.8c0 4.2-3.3 7.8-7.5 8-4.5.2-8.2-3.5-8.2-8 0-4.2 3.3-7.7 7.5-8v-6c-7.5 0-13.5 6-13.5 13.5S23.3 44 30.5 44c7.4 0 13.5-6 13.5-13.5V6h-9z"/>
+          </svg>
+          TikTok Official
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+      <!-- ==================================== TIPE JAVASCRIPT ==================================== -->
+<script>
+  fetch('database/stats.json')
+    .then(res => res.json())
+    .then(data => {
+      const sora = data.sora;
+      document.getElementById("sora-username").innerText = sora.username;
+      document.getElementById("sora-followers").innerText = formatNumber(sora.followers);
+      document.getElementById("sora-likes").innerText = formatNumber(sora.likes);
+    });
+
+  function formatNumber(n) {
+    return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M'
+         : n >= 1e3 ? (n / 1e3).toFixed(1) + 'K'
+         : n;
+  }
+</script>
+
+<script>
+  async function updateAdminStats() {
+    try {
+      const res = await fetch('assets/data/followers.json');
+      const data = await res.json();
+
+      // List admin yang punya data
+      const admins = ['ryy', 'sora', 'ranz'];
+
+      admins.forEach(name => {
+        const stat = data[name];
+        document.getElementById(`${name}-username`).innerText = stat.username;
+        document.getElementById(`${name}-followers`).innerText = formatNumber(stat.followers);
+        document.getElementById(`${name}-likes`).innerText = formatNumber(stat.likes);
+      });
+    } catch (e) {
+      console.error("Gagal ambil followers.json:", e);
+    }
+  }
+
+  function formatNumber(n) {
+    return n >= 1e6 ? (n/1e6).toFixed(1) + 'M' :
+           n >= 1e3 ? (n/1e3).toFixed(1) + 'K' : n;
+  }
+
+  updateAdminStats();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const steps = document.querySelectorAll('.animate-step');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          steps.forEach((el, i) => {
+            setTimeout(() => {
+              el.classList.add('show');
+            }, i * 250);
+          });
+          observer.disconnect(); // stop observing after triggered
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (steps.length > 0) {
+      observer.observe(steps[0]);
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.glass-float-container');
+    const count = 15; // Jumlah panel diperbanyak
+
+    for (let i = 0; i < count; i++) {
+      const panel = document.createElement('div');
+      panel.className = 'panel';
+
+      const size = 40 + Math.random() * 50;
+      panel.style.width = `${size}px`;
+      panel.style.height = `${size / 1.8}px`;
+      panel.style.top = `${Math.random() * 80}%`;
+      panel.style.left = `${Math.random() * 80}%`;
+
+      const delay = Math.random() * 15;
+      const duration = 10 + Math.random() * 15;
+
+      panel.style.animationDuration = `${duration}s`;
+      panel.style.animationDelay = `${delay}s`;
+
+      container.appendChild(panel);
+    }
+  });
+</script>
+
+<script>
+  // Ambil semua elemen yang punya animasi
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+  // Observer tunggal untuk semuanya
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('show');
+        void entry.target.offsetWidth;
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); // Biar bisa retrigger
+      }
+    });
+  }, { threshold: 0.3 });
+
+  // Daftarkan semua elemen untuk diamati
+  animatedElements.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
+
+<script>
+  const cards = [
+    { img: "source/gen_1.jpg", title: "Kagenou Gen I", desc: "Generasi pertama pendiri komunitas." },
+    { img: "source/gen_2.jpg", title: "Kagenou Gen II", desc: "Melanjutkan jejak dan memperluas." },
+    { img: "source/gen_3.jpg", title: "Kagenou Gen III", desc: "Generasi kreator muda berbakat." },
+    { img: "source/leader.jpg", title: "Leader", desc: "Pemimpin utama Kagenou Family." },
+    { img: "source/mlbb.jpg", title: "Divisi MLBB", desc: "Divisi aktif di dunia Mobile Legends." },
+    { img: "source/ff.jpg", title: "Divisi Free Fire", desc: "Divisi penuh strategi dan aksi." },
+    { img: "source/editor.jpg", title: "Editor", desc: "Tim visual dan desain grafis." },
+    { img: "source/bot.jpg", title: "Bot Developer", desc: "Pengembang bot Sumika AI." },
+    { img: "source/activity.jpg", title: "Aktivitas", desc: "Kegiatan dan event komunitas." },
+  ];
+
+  function openCard(index) {
+    const modal = document.getElementById("cardModal");
+    const img = document.getElementById("modalImg");
+    const title = document.getElementById("modalTitle");
+    const desc = document.getElementById("modalDesc");
+    if (!modal || !img || !title || !desc) return;
+    const data = cards[index];
+    img.src = data.img;
+    title.textContent = data.title;
+    desc.textContent = data.desc;
+    modal.classList.add("show");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeCard() {
+    const modal = document.getElementById("cardModal");
+    if (!modal) return;
+    modal.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  }
+</script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const RYY_INDEX = 3;
+  const swiper = new Swiper('.mySwiper', {
+    loop: false,
+    grabCursor: true,
+    centeredSlides: true,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  function centerRyyBasedOnScreen() {
+    let targetIndex = RYY_INDEX;
+    if (window.innerWidth <= 768) {
+      targetIndex = RYY_INDEX;
+    }
+    swiper.slideTo(targetIndex, 0);
+  }
+
+  setTimeout(centerRyyBasedOnScreen, 300);
+  window.addEventListener('resize', () => {
+    setTimeout(centerRyyBasedOnScreen, 300);
+  });
+</script>
+
+<script>
+  function scrollToHome(event) {
+    event.preventDefault();
+    const homeSection = document.getElementById("home");
+    document.body.style.overflow = "auto";
+    homeSection.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+</body>
+</html>
