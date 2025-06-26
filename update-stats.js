@@ -1,23 +1,36 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-async function updateSoraStats() {
-  const res = await fetch('https://api.tiklydown.eu.org/api/stalk?user=sorawangyy');
+// Daftar admin dan username TikTok-nya
+const admins = {
+  sora: 'sorawangyy',
+  ranz: 'y.rexyz',
+};
+
+async function fetchStats(username) {
+  const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
   const json = await res.json();
-  const stats = json.data.stats;
+  if (!json || !json.data || !json.data.stats) return null;
+
   const user = json.data.user;
+  const stats = json.data.stats;
 
-  const data = {
-    sora: {
-      username: `@${user.uniqueId}`,
-      nickname: user.nickname,
-      followers: stats.followerCount,
-      likes: stats.heartCount
-    }
+  return {
+    username: `@${user.uniqueId}`,
+    nickname: user.nickname,
+    followers: stats.followerCount,
+    likes: stats.heartCount
   };
-
-  fs.writeFileSync('database/stats.json', JSON.stringify(data, null, 2));
-  console.log('✅ stats.json updated successfully');
 }
 
-updateSoraStats();
+(async () => {
+  const result = {};
+
+  for (const [key, tiktokUser] of Object.entries(admins)) {
+    const data = await fetchStats(tiktokUser);
+    if (data) result[key] = data;
+  }
+
+  fs.writeFileSync('database/stats.json', JSON.stringify(result, null, 2));
+  console.log('✅ stats.json updated with multi-admin data!');
+})();
