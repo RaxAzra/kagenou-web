@@ -8,19 +8,28 @@ const admins = {
 };
 
 async function fetchStats(username) {
-  const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
-  const json = await res.json();
-  if (!json || !json.data || !json.data.stats) return null;
+  try {
+    const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
+    const json = await res.json();
 
-  const user = json.data.user;
-  const stats = json.data.stats;
+    if (!json || !json.data || !json.data.stats) {
+      console.warn(`⚠️ Data tidak valid untuk ${username}`);
+      return null;
+    }
 
-  return {
-    username: `@${user.uniqueId}`,
-    nickname: user.nickname,
-    followers: stats.followerCount,
-    likes: stats.heartCount
-  };
+    const user = json.data.user;
+    const stats = json.data.stats;
+
+    return {
+      username: `@${user.uniqueId}`,
+      nickname: user.nickname,
+      followers: stats.followerCount,
+      likes: stats.heartCount
+    };
+  } catch (err) {
+    console.error(`❌ Gagal ambil data ${username}:`, err);
+    return null;
+  }
 }
 
 (async () => {
@@ -32,5 +41,5 @@ async function fetchStats(username) {
   }
 
   fs.writeFileSync('database/stats.json', JSON.stringify(result, null, 2));
-  console.log('✅ stats.json updated with multi-admin data!');
+  console.log('✅ stats.json berhasil diupdate!');
 })();
