@@ -2,8 +2,8 @@ name: Update TikTok Stats
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # ⏰ Tiap 1 menit (untuk uji coba)
-  workflow_dispatch:        # ➕ Bisa jalan manual juga
+    - cron: '*/1 * * * *'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -23,7 +23,7 @@ jobs:
           npm init -y
           npm install node-fetch@2
 
-      - name: Jalankan Script Update
+      - name: Run Update Script
         run: node update-stats.js
 
       - name: Commit dan Push Perubahan
