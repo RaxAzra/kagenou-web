@@ -1,0 +1,862 @@
+@font-face {
+  font-family: 'Aipon';
+  src: url('./font/aipon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Aipon', sans-serif;
+  background: linear-gradient(to bottom, #1c003a, #000);
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HERO Section - full screen */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text-wrapper h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.3em;
+  color: white;
+}
+
+.text-wrapper h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'Aipon', sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+
+  background: linear-gradient(120deg, #f8f3ff, #a64eff, #e2ccff);
+  background-size: 200%;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  text-shadow:
+    0 0 2px #a64eff40,
+    0 0 6px #c29fff30;
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2em;
+  padding: 10px 20px;
+  border: 2px solid #a64eff;
+  color: #a64eff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+  font-weight: bold;
+  gap: 8px;
+}
+
+@keyframes iphone-breath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+.home-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  animation: iphone-breath 2.5s ease-in-out infinite;
+}
+
+/* SECTION bawah */
+.home-section {
+  min-height: 100vh;
+  padding: 4em 2em;
+  background: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 💡 Trik: aktifkan scroll kalau klik tombol */
+body:has(:target) {
+  overflow: auto;
+}
+
+.admin-section {
+  padding: 3em 2em;
+  background: #0b0019;
+  color: white;
+  text-align: center;
+}
+
+.admin-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+  font-family: 'Aipon', sans-serif;
+}
+
+.admin-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1em;
+  scroll-behavior: smooth;
+}
+
+.admin-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: linear-gradient(to bottom, #1c003a, #000);
+  border: 2px solid #a64eff50;
+  border-radius: 16px;
+  width: 220px;
+  padding: 1em;
+  color: white;
+  box-shadow: 0 0 15px #a64eff20;
+  transition: transform 0.3s ease;
+}
+
+.admin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #a64eff70;
+}
+
+.admin-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.8em;
+}
+
+.admin-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2em;
+}
+
+.admin-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.admin-card .role {
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.5em;
+}
+
+.admin-stats {
+  margin-top: 0.5em;
+  font-size: 0.85rem;
+  text-align: left;
+  background: #ffffff08;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.admin-stats p {
+  margin: 0.2em 0;
+  color: #ccc;
+}
+.admin-stats strong {
+  color: #a64eff;
+}
+
+/* ========== ADMIN Style ========== */
+@font-face {
+  font-family: 'Aipon';
+  src: url('./font/aipon.ttf') format('truetype');
+}
+
+.admin-section {
+  padding: 3em 1em;
+  background: none;
+  color: white;
+  text-align: center;
+}
+
+.admin-section h2 {
+  font-family: 'Aipon', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2em;
+  color: #a64eff;
+}
+
+.swiper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide {
+  width: 220px !important;
+  flex-shrink: 0;
+  max-width: 90vw;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #1c003a, #10001a);
+  border-radius: 16px;
+  padding: 1em;
+  box-shadow: 0 0 15px #a64eff30;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #a64eff60;
+}
+
+.admin-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.8em;
+}
+
+.admin-card h3 {
+  margin: 0.3em 0 0.1em;
+  font-size: 1.1rem;
+}
+
+.admin-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Owner special styling */
+.admin-card.owner {
+  border: 2px solid #ffd70088;
+  box-shadow: 0 0 25px #ffd70080;
+}
+
+.admin-card.owner p {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.swiper-container-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efek fade kiri & kanan */
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  /* Blur dihapus TOTAL */
+  /* backdrop-filter: none; */  /* gak perlu */
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(to right,
+    #0b0019,
+    rgba(11, 0, 25, 0.4),
+    transparent
+  );
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left,
+    #0b0019,
+    rgba(11, 0, 25, 0.4),
+    transparent
+  );
+}
+
+/* eaefaefaefafe */
+.card-gallery {
+  padding: 3em 1em;
+  background: none;
+  text-align: center;
+  position: relative;
+  border: 2px solid rgba(166, 78, 255, 0.2); /* border ungu tipis */
+  border-radius: 20px;
+  box-shadow:
+    0 0 20px rgba(166, 78, 255, 0.2),
+    0 0 40px rgba(166, 78, 255, 0.1),
+    0 0 60px rgba(166, 78, 255, 0.05); /* efek glow menyebar */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.cards img {
+  width: clamp(120px, 20vw, 160px);
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.cards img:hover {
+  transform: scale(1.05);
+}
+
+/* Efek miring bergantian */
+.cards img:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.cards img:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.cards img:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 5;
+}
+ /* eeeeeeeeeeeeeeeeeeee */
+ .card-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.card-modal.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.card-modal.active {
+  display: flex;
+}
+
+.card-content {
+  background: rgba(18, 0, 32, 0.5); /* ungu tua transparan */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5em;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 30px rgba(166, 78, 255, 0.3); /* glow ungu */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.3s ease;
+}
+
+.card-content img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 12px;
+  margin-bottom: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .card-content img {
+    max-width: 90%;
+    max-height: 160px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.gallery-tagline {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: 'Aipon', sans-serif; /* ganti sesuai font lo */
+  color: #ccc;
+  margin-bottom: 1.5em;
+  opacity: 0;
+  text-shadow: 0 0 8px rgba(166, 78, 255, 0.2);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Animasi muncul pelan */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  font-family: 'Aipon', sans-serif; /* opsional */
+}
+
+/* */
+/* FadeDown lembut */
+@keyframes fadeDownSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.98);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* FadeUp lembut */
+@keyframes fadeUpSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.98);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.text-wrapper h2 {
+  animation: fadeDownSmooth 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.text-wrapper h1 {
+  animation: fadeUpSmooth 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.home-button {
+  animation: fadeUpSmooth 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.fancy-home .gallery-title,
+.fancy-home .cards {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(10px);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: opacity, transform, filter;
+}
+
+.fancy-home.show .gallery-title,
+.fancy-home.show .cards {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+body.modal-open {
+  overflow: hidden;
+  touch-action: none; /* untuk HP biar gak bisa scroll gesture */
+}
+
+.text-wrapper {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(10px);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: opacity, transform, filter;
+}
+
+.text-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/**/
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(10px);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: opacity, transform, filter;
+}
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Container efek bokeh */
+.aurora-section-wrapper {
+  position: relative;
+  z-index: 0;
+  background: none; /* gradasi ungu nyatu */
+}
+
+.aurora-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.aurora:hover {
+  transform: scale(1.2);
+  transition: transform 0.8s ease;
+}
+
+.aurora-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  contain: layout paint;
+}
+
+.aurora {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(166, 78, 255, 0.3) 0%, transparent 80%);
+  filter: blur(100px);
+  opacity: 0.5;
+  animation: move-aurora 20s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.aurora-color {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #a64eff99 0%, transparent 70%);
+  animation: color-shift 15s ease-in-out infinite alternate;
+}
+
+/* === Aurora 1 === */
+.aurora-1 {
+  top: 20%;
+  left: 30%;
+  transform: translateX(-200px);
+  background: radial-gradient(circle, rgba(166, 78, 255, 0.55) 0%, transparent 70%);
+  opacity: 0.9;
+  animation-delay: 0s;
+}
+
+.aurora-2 {
+  bottom: 10%;
+  left: 70%;
+  transform: translateX(150px);
+  background: radial-gradient(circle, rgba(166, 78, 255, 0.2) 0%, transparent 70%);
+  opacity: 0.5;
+  animation-delay: 8s;
+}
+
+.aurora-3 {
+  top: 40%;
+  left: 75%;
+  transform: translate(100px, 0);
+  background: radial-gradient(circle, #00ffe599 0%, transparent 70%);
+  animation-delay: 5s;
+}
+
+.aurora-4 {
+  top: 60%;
+  left: 10%;
+  transform: translate(-150px, 0);
+  background: radial-gradient(circle, #ff8aee99 0%, transparent 70%);
+  animation-delay: 12s;
+}
+
+.aurora-5 {
+  bottom: 20%;
+  left: 40%;
+  transform: translate(50px, 0);
+  background: radial-gradient(circle, #a6ffcb99 0%, transparent 70%);
+  animation-delay: 7s;
+}
+
+.aurora-6 {
+  top: 25%;
+  left: 90%;
+  transform: translate(200px, 0);
+  background: radial-gradient(circle, #a64eff99 0%, transparent 70%);
+  animation-delay: 15s;
+}
+
+/* === Animasi Gerak === */
+@keyframes move-aurora {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(20px, -20px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-15px, 10px, 0) scale(1.1);
+  }
+}
+
+/* === Animasi Warna === */
+@keyframes color-shift {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/**/
+.timeline-item {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-content {
+  box-sizing: border-box;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1; /* Ini yang bikin fix bulat! */
+  border-radius: 50%;
+  background: #a64eff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px rgba(166, 78, 255, 0.6);
+  transition: transform 0.5s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-item .content {
+    text-align: center;
+  }
+
+  .icon-circle {
+    left: 20px !important;
+    right: auto !important;
+    transform: none;
+  }
+
+  .timeline-title {
+    text-align: center;
+  }
+}
+
+.timeline-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 1rem; /* Tambahan ini mencegah overflow */
+}
+
+
+.timeline-section {
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.gold-text {
+  background: linear-gradient(to right, #ffd700, #ffcc00, #ffaa00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.kagenou-footer {
+  background: none;
+  color: #ddd;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  margin-top: 50px;
+}
+
+.kagenou-footer .footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kagenou-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.kagenou-footer .footer-links li {
+  margin: 0 10px;
+}
+
+.kagenou-footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.kagenou-footer .footer-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #ffd700aa;
+}
+
+.kagenou-footer .footer-links .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/**/
+.scroll-down-btn {
+  text-align: center;
+  margin-top: 30px;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down-btn a {
+  display: inline-block;
+  color: #ffd700;
+  transition: transform 0.3s ease;
+}
+
+.scroll-down-btn a:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+.scroll-icon {
+  width: 36px;
+  height: 36px;
+  stroke: currentColor;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+body.scroll-locked {
+  overflow: hidden;
+}
