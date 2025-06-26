@@ -217,48 +217,27 @@
 </footer>
       <!-- ==================================== TIPE JAVASCRIPT ==================================== -->
 <script>
-  fetch('database/stats.json')
-    .then(res => res.json())
-    .then(data => {
-      const sora = data.sora;
-      document.getElementById("sora-username").innerText = sora.username;
-      document.getElementById("sora-followers").innerText = formatNumber(sora.followers);
-      document.getElementById("sora-likes").innerText = formatNumber(sora.likes);
-    });
-
-  function formatNumber(n) {
-    return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M'
-         : n >= 1e3 ? (n / 1e3).toFixed(1) + 'K'
-         : n;
-  }
-</script>
-
-<script>
-  async function updateAdminStats() {
-    try {
-      const res = await fetch('assets/data/followers.json');
-      const data = await res.json();
-
-      // List admin yang punya data
-      const admins = ['ryy', 'sora', 'ranz'];
-
-      admins.forEach(name => {
-        const stat = data[name];
-        document.getElementById(`${name}-username`).innerText = stat.username;
-        document.getElementById(`${name}-followers`).innerText = formatNumber(stat.followers);
-        document.getElementById(`${name}-likes`).innerText = formatNumber(stat.likes);
-      });
-    } catch (e) {
-      console.error("Gagal ambil followers.json:", e);
+fetch('database/stats.json')
+  .then(res => res.json())
+  .then(data => {
+    if (data.sora) {
+      document.getElementById("sora-username").innerText = data.sora.username;
+      document.getElementById("sora-followers").innerText = formatNumber(data.sora.followers);
+      document.getElementById("sora-likes").innerText = formatNumber(data.sora.likes);
     }
-  }
 
-  function formatNumber(n) {
-    return n >= 1e6 ? (n/1e6).toFixed(1) + 'M' :
-           n >= 1e3 ? (n/1e3).toFixed(1) + 'K' : n;
-  }
+    if (data.ranz) {
+      document.getElementById("ranz-username").innerText = data.ranz.username;
+      document.getElementById("ranz-followers").innerText = formatNumber(data.ranz.followers);
+      document.getElementById("ranz-likes").innerText = formatNumber(data.ranz.likes);
+    }
+  });
 
-  updateAdminStats();
+function formatNumber(n) {
+  return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M'
+       : n >= 1e3 ? (n / 1e3).toFixed(1) + 'K'
+       : n;
+}
 </script>
 
 <script>
