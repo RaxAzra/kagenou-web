@@ -2,12 +2,13 @@ name: Update TikTok Stats
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Setiap 1 jam
-  workflow_dispatch:      # Bisa juga dijalankan manual
+    - cron: '*/1 * * * *'  # ⏰ Tiap 1 menit (untuk uji coba)
+  workflow_dispatch:        # ➕ Bisa jalan manual juga
 
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -17,16 +18,18 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Dependencies
-        run: npm install node-fetch
+      - name: Init Project & Install node-fetch
+        run: |
+          npm init -y
+          npm install node-fetch@2
 
-      - name: Run Update Script
+      - name: Jalankan Script Update
         run: node update-stats.js
 
-      - name: Commit and Push Changes
+      - name: Commit dan Push Perubahan
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add database/stats.json
-          git commit -m "chore: update TikTok stats [bot]" || echo "No changes to commit"
+          git commit -m "chore: update TikTok stats [CI]" || echo "⚠️ No changes to commit"
           git push
