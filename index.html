@@ -197,7 +197,7 @@
 <script>
 async function fetchStats(username) {
   try {
-    const res = await fetch(`https://corsproxy.io/?https://api.tiklydown.eu.org/api/stalk?user=${username}`);
+    const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
     const json = await res.json();
     const stats = json?.data?.stats;
     const user = json?.data?.user;
