@@ -156,9 +156,7 @@ body:has(:target) {
 .admin-card img {
   width: 100%;
   height: 180px;
-  object-fit: contain; /* ini biar gak terpotong */
-  object-position: center;
-  background-color: transparent; /* kalau mau aman */
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 0.8em;
 }
