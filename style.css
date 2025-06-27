@@ -154,10 +154,10 @@ body:has(:target) {
 
 .admin-card img {
   width: 100%;
-  max-height: 180px;
-  object-fit: contain; /* atau remove jika rasio tetap ingin dijaga */
-  background-color: #1a1a1a; /* buat background solid agar gak ada ilusi garis */
-  padding: 4px; /* bisa bikin gambar lebih "lega" */
+  height: 180px;
+  object-fit: contain;
+  background-color: #0b0019; /* atau warna card kamu */
+  padding: 10px;
   border-radius: 12px;
 }
 
@@ -885,4 +885,8 @@ body.scroll-locked {
 
 .admin-stats {
   font-family: 'Noto Sans', 'Segoe UI', 'Arial', sans-serif;
+}
+
+#ryy-username {
+  font-family: 'Arial', 'Segoe UI', sans-serif !important;
 }
