@@ -860,3 +860,7 @@ body.modal-open {
 body.scroll-locked {
   overflow: hidden;
 }
+
+.admin-stats {
+  font-family: 'Segoe UI', 'Arial', sans-serif !important;
+}
