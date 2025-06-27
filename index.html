@@ -139,6 +139,8 @@
 </section>
 
 <!-- Bagian Admin -->
+
+<!-- Bagian Admin -->
 <section id="admin-section" class="admin-section">
   <h2>Admin Kagenou</h2>
   <div class="swiper mySwiper">
@@ -149,27 +151,10 @@
         <h3>Sora</h3>
         <p>Keamanan</p>
         <div class="admin-stats">
-          <p><strong>TikTok:</strong> <span id="sora-username">@loading</span></p>
+          <p><strong>TikTok:</strong> <span id="sora-username">...</span></p>
           <p><strong>Followers:</strong> <span id="sora-followers">...</span></p>
           <p><strong>Likes:</strong> <span id="sora-likes">...</span></p>
         </div>
-      </div>
-
-      <div class="swiper-slide admin-card">
-        <img src="source/logo.png" alt="Ranz">
-        <h3>Ranz</h3>
-        <p>Keamanan</p>
-        <div class="admin-stats">
-          <p><strong>TikTok:</strong> <span id="ranz-username">@loading</span></p>
-          <p><strong>Followers:</strong> <span id="ranz-followers">...</span></p>
-          <p><strong>Likes:</strong> <span id="ranz-likes">...</span></p>
-        </div>
-      </div>
-
-      <div class="swiper-slide admin-card">
-        <img src="source/logo.png" alt="Sena">
-        <h3>Sora S.DEV</h3>
-        <p>Keamanan</p>
       </div>
 
       <div class="swiper-slide admin-card owner">
@@ -179,21 +164,14 @@
       </div>
 
       <div class="swiper-slide admin-card">
-        <img src="source/logo.png" alt="Kram">
-        <h3>Ranz S.KOM</h3>
-        <p>Keamanan II</p>
-      </div>
-
-      <div class="swiper-slide admin-card">
-        <img src="source/logo.png" alt="Miruki">
-        <h3>Miruki</h3>
-        <p>Kolaborasi Member</p>
-      </div>
-
-      <div class="swiper-slide admin-card">
-        <img src="source/logo.png" alt="Paksi">
-        <h3>Paksi</h3>
-        <p>Kolaborasi Member</p>
+        <img src="source/logo.png" alt="Ranz">
+        <h3>Ranz</h3>
+        <p>Keamanan</p>
+        <div class="admin-stats">
+          <p><strong>TikTok:</strong> <span id="ranz-username">...</span></p>
+          <p><strong>Followers:</strong> <span id="ranz-followers">...</span></p>
+          <p><strong>Likes:</strong> <span id="ranz-likes">...</span></p>
+        </div>
       </div>
 
     </div>
@@ -216,22 +194,21 @@
   </div>
 </footer>
       <!-- ==================================== TIPE JAVASCRIPT ==================================== -->
-<!-- Tambahkan sebelum penutup body -->
 <script>
 async function fetchStats(username) {
   try {
-    const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
+    const res = await fetch(`https://corsproxy.io/?https://api.tiklydown.eu.org/api/stalk?user=${username}`);
     const json = await res.json();
     const stats = json?.data?.stats;
     const user = json?.data?.user;
 
     return {
-      username: `@${user?.uniqueId || username}`,
+      nickname: user?.nickname || 'Not Found',
       followers: stats?.followerCount || 0,
       likes: stats?.heartCount || 0
     };
   } catch (err) {
-    console.error(`❌ Gagal ambil data untuk ${username}`, err);
+    console.error(`gagal tod ${username}`, err);
     return null;
   }
 }
@@ -245,14 +222,14 @@ function formatNumber(n) {
 async function updateStats() {
   const sora = await fetchStats('sorawangyy');
   if (sora) {
-    document.getElementById("sora-username").innerText = sora.username;
+    document.getElementById("sora-username").innerText = sora.nickname;
     document.getElementById("sora-followers").innerText = formatNumber(sora.followers);
     document.getElementById("sora-likes").innerText = formatNumber(sora.likes);
   }
 
   const ranz = await fetchStats('y.rexyz');
   if (ranz) {
-    document.getElementById("ranz-username").innerText = ranz.username;
+    document.getElementById("ranz-username").innerText = ranz.nickname;
     document.getElementById("ranz-followers").innerText = formatNumber(ranz.followers);
     document.getElementById("ranz-likes").innerText = formatNumber(ranz.likes);
   }
