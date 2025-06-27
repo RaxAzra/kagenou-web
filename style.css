@@ -264,11 +264,32 @@ body:has(:target) {
 }
 
 /* Owner special styling */
+.admin-card {
+  /* style umum untuk semua card */
+}
+
+.admin-card img {
+  /* gambar admin */
+}
+
+.admin-stats {
+  font-family: 'Segoe UI', sans-serif !important;
+  font-size: 0.9rem;
+}
+
+/* Style khusus untuk kartu Pemilik */
+.admin-card.owner {
+  border: 2px solid #ffd70088;
+  box-shadow: 0 0 25px #ffd70080;
+}
+
+/* HANYA teks "Pemilik" yang warna emas */
 .admin-card.owner .role-title {
   color: #ffd700;
   font-weight: bold;
 }
 
+/* Bagian stats tetap putih meski di kartu owner */
 .admin-card.owner .admin-stats p,
 .admin-card.owner .admin-stats span {
   color: #ffffff;
