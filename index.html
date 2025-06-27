@@ -161,6 +161,11 @@
         <img src="source/logo.png" alt="Ryy Kagenou>"
         <h3>Ryy Kagenou</h3>
         <p>Pemilik</p>
+        <div class="admin-stats">
+          <p><span id="ryy-username">...</span></p>
+          <p><strong>Followers:</strong> <span id="ryy-followers">...</span></p>
+          <p><strong>Likes:</strong> <span id="ryy-likes">...</span></p>
+        </div>
       </div>
 
       <div class="swiper-slide admin-card">
@@ -225,6 +230,13 @@ async function updateStats() {
     document.getElementById("sora-username").innerText = sora.nickname;
     document.getElementById("sora-followers").innerText = formatNumber(sora.followers);
     document.getElementById("sora-likes").innerText = formatNumber(sora.likes);
+  }
+
+  const ryy = await fetchStats('ryy_kagenou18');
+  if (sora) {
+    document.getElementById("ryy-username").innerText = ryy.nickname;
+    document.getElementById("ryy-followers").innerText = formatNumber(ryy.followers);
+    document.getElementById("ryy-likes").innerText = formatNumber(ryy.likes);
   }
 
   const ranz = await fetchStats('y.rexyz');
@@ -356,7 +368,7 @@ window.addEventListener('DOMContentLoaded', updateStats);
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-  const RYY_INDEX = 3;
+  const RYY_INDEX = 2;
   const swiper = new Swiper('.mySwiper', {
     loop: false,
     grabCursor: true,
