@@ -137,7 +137,6 @@ body:has(:target) {
 .admin-card {
   flex: 0 0 auto;
   scroll-snap-align: start;
-  background-color: transparent;
   background: linear-gradient(to bottom, #1c003a, #000);
   border: 2px solid #a64eff50;
   border-radius: 16px;
