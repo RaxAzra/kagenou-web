@@ -883,5 +883,6 @@ body.scroll-locked {
 }
 
 .admin-stats {
-  font-family: 'Segoe UI', 'Arial', sans-serif !important;
+  font-family: system-ui, sans-serif;
 }
+
