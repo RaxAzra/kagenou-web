@@ -193,6 +193,10 @@ body:has(:target) {
   color: #a64eff;
 }
 
+.admin-stats span {
+  font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
+}
+
 /* ========== ADMIN Style ========== */
 @font-face {
   font-family: 'Aipon';
