@@ -860,8 +860,3 @@ body.modal-open {
 body.scroll-locked {
   overflow: hidden;
 }
-
-.admin-stats span {
-  transition: all 0.3s ease;
-  font-weight: bold;
-}
