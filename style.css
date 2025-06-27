@@ -264,19 +264,15 @@ body:has(:target) {
 }
 
 /* Owner special styling */
-.admin-card.owner {
-  border: 2px solid #ffd70088;
-  box-shadow: 0 0 25px #ffd70080;
-}
-
-.admin-card.owner p {
+.admin-card.owner .role-title {
   color: #ffd700;
   font-weight: bold;
 }
 
-.swiper-container-wrapper {
-  position: relative;
-  overflow: hidden;
+.admin-card.owner .admin-stats p,
+.admin-card.owner .admin-stats span {
+  color: #ffffff;
+  font-weight: normal;
 }
 
 /* Efek fade kiri & kanan */
