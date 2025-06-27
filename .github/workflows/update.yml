@@ -2,8 +2,8 @@ name: Update TikTok Stats
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # update tiap menit (uji coba)
-  workflow_dispatch:        # bisa juga dijalankan manual
+    - cron: '*/1 * * * *'
+  workflow_dispatch:
 
 jobs:
   update:
