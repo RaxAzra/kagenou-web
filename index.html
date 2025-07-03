@@ -31,6 +31,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fontlibrary.org/face/symbola" type="text/css" />
+  <link rel="stylesheet" href="https://fontlibrary.org/face/symbola" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://unpkg.com/@fontsource/unifont/index.css">
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -50,6 +55,7 @@
     </div>
 
   <!-- Hero Section (tampilan awal) -->
+<!-- Hero Section (tampilan awal) -->
 <section class="hero animate-on-scroll">
 
   <div class="text-wrapper animate-on-scroll">
@@ -58,17 +64,27 @@
   </div>
 
   <div class="button-container animate-on-scroll">
-    <a href="#" class="home-button" onclick="scrollToHome(event)">
+    <div class="top-buttons">
+      <a href="#" class="home-button" onclick="scrollToHome(event)">
+        <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
+        </svg>
+        <span>Home</span>
+      </a>
+
+      <a href="#" class="home-button" onclick="openMemberModal(); return false;">
+        <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+        </svg>
+        <span>Member</span>
+      </a>
+    </div>
+
+    <a href="#" class="home-button announcement-button" onclick="openAnnouncement(); return false;">
       <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
-      <span>Home</span>
-    </a>
-    <a href="#" class="home-button" onclick="openMemberModal(); return false;">
-      <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
-      </svg>
-      <span>List Member</span>
+      <span>Announcement</span>
     </a>
   </div>
 
@@ -89,6 +105,16 @@
   <div class="modal-box">
     <div id="detailContent">Loading...</div>
     <button onclick="closeDetail()">Tutup</button>
+  </div>
+</div>
+
+<div id="announcementModal" class="modal-overlay hidden">
+  <div class="modal-content animate-modal">
+    <h2>Announcement</h2>
+    <div class="modal-body">
+      <p>Tidak ada pengumuman saat ini.</p>
+    </div>
+    <button onclick="closeAnnouncement()" class="modal-close">Tutup</button>
   </div>
 </div>
 
@@ -228,102 +254,93 @@
     </ul>
   </div>
 </footer>
-      <!-- ==================================== TIPE JAVASCRIPT ==================================== -->
-       <script>
-async function openMemberModal() {
-  const modal = document.getElementById('memberModal');
-  const list = document.getElementById('memberList');
-  const searchInput = document.getElementById('searchInput');
+ <!-- ==================================== TIPE JAVASCRIPT ==================================== -->
+<script>
+  async function openMemberModal() {
+    const modal = document.getElementById('memberModal');
+    const list = document.getElementById('memberList');
+    const searchInput = document.getElementById('searchInput');
 
-  list.innerHTML = 'Memuat...';
-  modal.classList.remove('hidden');
+    list.innerHTML = 'Memuat...';
+    modal.style.display = 'flex';
+    modal.classList.remove('hidden');
 
-  // Ambil data JSON lokal
-  const res = await fetch('./user_kagenou.json');
-  const data = await res.json();
+    const res = await fetch('./user_kagenou.json');
+    const data = await res.json();
+    let members = Object.entries(data);
 
-  let members = Object.entries(data);
-
-  function renderList(filter = '') {
-    list.innerHTML = '';
-    members.forEach(([id, user]) => {
-      if (
-        user.nickname.toLowerCase().includes(filter.toLowerCase()) ||
-        user.username.toLowerCase().includes(filter.toLowerCase())
-      ) {
-        const li = document.createElement('li');
-        li.textContent = `${user.nickname} (@${user.username})`;
-        li.onclick = () => openDetail(user.username);
-        list.appendChild(li);
-      }
-    });
-  }
-
-  searchInput.addEventListener('input', (e) => renderList(e.target.value));
-  renderList();
-}
-
-function closeModal() {
-  document.getElementById('memberModal').classList.add('hidden');
-}
-
-// Detail TikTok
-async function openDetail(username) {
-  const modal = document.getElementById('detailModal');
-  const content = document.getElementById('detailContent');
-  modal.classList.remove('hidden');
-  content.innerHTML = 'Loading...';
-
-  try {
-    const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
-    const json = await res.json();
-
-    if (json.status === 200 && json.data) {
-  const u = json.data.user;
-  const stats = json.data.stats;
-
-  const bio = u.signature || '-';
-  const bioLink = u.bioLink?.link ? `<div class="detail-link"><a href="${u.bioLink.link}" target="_blank">🔗 ${u.bioLink.link}</a></div>` : '';
-
-  content.innerHTML = `
-  <div class="tiktok-detail">
-    <img class="detail-avatar" src="${u.avatarLarger}" alt="${u.nickname}">
-    <div class="detail-nama">${u.nickname}</div>
-    <div class="detail-username">@${u.uniqueId}</div>
-    <div class="detail-bio">${u.signature || '-'}</div>
-    ${u.bioLink?.link ? `<div class="detail-link"><a href="${u.bioLink.link}" target="_blank">${u.bioLink.link}</a></div>` : ''}
-    <div class="detail-stats-vertical">
-      <div>Pengikut : ${stats.followerCount.toLocaleString()}</div>
-      <div>Di ikuti : ${stats.followingCount.toLocaleString()}</div>
-      <div>Total Suka : ${stats.heartCount.toLocaleString()}</div>
-      <div>Total Video : ${stats.videoCount} video</div>
-    </div>
-  </div>
-`;
-
-} else {
-      content.innerHTML = 'Data tidak ditemukan.';
+    function renderList(filter = '') {
+      list.innerHTML = '';
+      members.forEach(([id, user]) => {
+        if (
+          user.nickname.toLowerCase().includes(filter.toLowerCase()) ||
+          user.username.toLowerCase().includes(filter.toLowerCase())
+        ) {
+          const li = document.createElement('li');
+          li.textContent = `${user.nickname} (@${user.username})`;
+          li.onclick = () => openDetail(user.username);
+          list.appendChild(li);
+        }
+      });
     }
-  } catch (e) {
-    content.innerHTML = 'Gagal mengambil data.';
+
+    searchInput.addEventListener('input', (e) => renderList(e.target.value));
+    renderList();
   }
-};
 
-function closeDetail() {
-  document.getElementById('detailModal').classList.add('hidden');
-}
-
-function closeModal() {
-  const modal = document.getElementById('memberModal');
-  modal.classList.remove('show');
-  modal.classList.add('fade-out'); // class baru
-
-  setTimeout(() => {
-    modal.classList.remove('fade-out');
+  function closeModal() {
+    const modal = document.getElementById('memberModal');
+    modal.style.display = 'none';
     modal.classList.add('hidden');
-  }, 200); // sama dengan durasi animasi
-}
 
+    setTimeout(() => {
+      modal.classList.remove('fade-out');
+      modal.classList.add('hidden');
+    }, 200);
+  }
+
+  async function openDetail(username) {
+    const modal = document.getElementById('detailModal');
+    const content = document.getElementById('detailContent');
+    modal.classList.remove('hidden');
+    content.innerHTML = 'Loading...';
+
+    try {
+      const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
+      const json = await res.json();
+
+      if (json.status === 200 && json.data) {
+        const u = json.data.user;
+        const stats = json.data.stats;
+
+        const bio = u.signature || '-';
+        const bioLink = u.bioLink?.link ? `<div class="detail-link"><a href="${u.bioLink.link}" target="_blank">🔗 ${u.bioLink.link}</a></div>` : '';
+
+        content.innerHTML = `
+          <div class="tiktok-detail">
+            <img class="detail-avatar" src="${u.avatarLarger}" alt="${u.nickname}">
+            <div class="detail-nama">${u.nickname}</div>
+            <div class="detail-username">@${u.uniqueId}</div>
+            <div class="detail-bio">${bio}</div>
+            ${bioLink}
+            <div class="detail-stats-vertical">
+              <div>Pengikut : ${stats.followerCount.toLocaleString()}</div>
+              <div>Di ikuti : ${stats.followingCount.toLocaleString()}</div>
+              <div>Total Suka : ${stats.heartCount.toLocaleString()}</div>
+              <div>Total Video : ${stats.videoCount} video</div>
+            </div>
+          </div>`;
+      } else {
+        content.innerHTML = 'Data tidak ditemukan.';
+      }
+    } catch (e) {
+      content.innerHTML = 'Gagal mengambil data.';
+    }
+  }
+
+  function closeDetail() {
+    document.getElementById('detailModal').classList.add('hidden');
+  }
 </script>
 
 <script>
@@ -424,6 +441,18 @@ window.addEventListener('DOMContentLoaded', updateStats);
       container.appendChild(panel);
     }
   });
+</script>
+
+<script>
+  function openAnnouncement() {
+    const modal = document.getElementById("announcementModal");
+    modal.classList.remove("hidden");
+  }
+
+  function closeAnnouncement() {
+    const modal = document.getElementById("announcementModal");
+    modal.classList.add("hidden");
+  }
 </script>
 
 <script>
