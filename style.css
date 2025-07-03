@@ -31,12 +31,23 @@ body {
 /* HERO Section - full screen */
 .hero {
   height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  /* Tidak perlu transform di sini */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    transform: translateY(-5%);
+  }
 }
 
 .text-wrapper h2 {
@@ -52,37 +63,81 @@ body {
   line-height: 1.2;
 
   background: linear-gradient(120deg, #f8f3ff, #a64eff, #e2ccff);
-  background-size: 200%;
-  background-position: center;
+  background-size: 300%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 
+  animation: auraMove 6s ease-in-out infinite;
+
   text-shadow:
-    0 0 2px #a64eff40,
-    0 0 6px #c29fff30;
+    0 0 4px #a64eff70,
+    0 0 10px #a64eff40,
+    0 0 15px #e2ccff30;
 }
 
+@keyframes auraMove {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 4px #a64eff70, 0 0 10px #a64eff40, 0 0 15px #e2ccff30;
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 6px #e2ccff90, 0 0 14px #c69cff50, 0 0 20px #e2ccff40;
+  }
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 4px #a64eff70, 0 0 10px #a64eff40, 0 0 15px #e2ccff30;
+  }
+}
 .home-button {
   display: inline-flex;
   align-items: center;
   margin-top: 2em;
-  padding: 10px 20px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, rgba(35, 0, 60, 0.7), rgba(90, 0, 110, 0.5));
   border: 2px solid #a64eff;
-  color: #a64eff;
-  text-decoration: none;
   border-radius: 30px;
-  transition: 0.3s;
-  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
   gap: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(166, 78, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.home-button:hover {
+  background: linear-gradient(135deg, #a64eff, #e684ff);
+  color: #000;
+  box-shadow: 0 0 15px rgba(166, 78, 255, 0.6), 0 0 25px rgba(230, 132, 255, 0.4);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.home-button svg {
+  stroke: currentColor;
+  width: 20px;
+  height: 20px;
 }
 
 .button-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  margin-top: 2em;
+  gap: 16px;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.announcement-button {
+  margin-top: 4px;
 }
 
 .home-icon {
@@ -1178,4 +1233,84 @@ ul.member-list {
   text-align: left;
   margin-top: 12px;
   line-height: 1.6;
+}
+
+html, body {
+  touch-action: none;
+}
+body:not(.lock-scroll) {
+  touch-action: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Untuk blur latar belakang modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* gelap transparan */
+  backdrop-filter: blur(10px);     /* efek blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: rgba(20, 20, 30, 0.6);
+  border-radius: 20px;
+  padding: 2em;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInModal 0.3s ease-out;
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  color: #e0b3ff;
+}
+
+.modal-body p {
+  margin: 0.5em 0;
+  font-size: 1rem;
+}
+
+.modal-close {
+  margin-top: 1.5em;
+  background: #a64eff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: #c67dff;
+}
+
+@keyframes fadeInModal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
