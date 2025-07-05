@@ -293,7 +293,8 @@ body:has(:target) {
 }
 
 .admin-stats span {
-  font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
+  font-family: 'Segoe UI', 'Arial', 'Noto Sans', sans-serif;
+  word-break: break-word;
 }
 
 /* ========== ADMIN Style ========== */
