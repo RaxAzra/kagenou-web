@@ -1045,6 +1045,15 @@ body.scroll-locked {
   transition: background 0.2s;
 }
 
+.member-list li {
+  font-family:
+    'Segoe UI Symbol',
+    'Arial Unicode MS',
+    'Noto Sans Symbols',
+    'Noto Sans',
+    sans-serif !important;
+}
+
 .member-list li:hover {
   background: #f2f2f2;
 }
@@ -1412,4 +1421,18 @@ body {
   transform: none !important;
   outline: none !important;
   filter: none !important;
+}
+
+.member-nickname {
+  all: unset;
+  display: inline;
+  font-family:
+    'Noto Color Emoji',
+    'Segoe UI Symbol',
+    'Noto Sans Symbols',
+    'Arial Unicode MS',
+    'Noto Sans',
+    sans-serif !important;
+  font-size: 1rem;
+  color: #fff;
 }
