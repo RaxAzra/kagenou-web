@@ -1384,3 +1384,20 @@ body {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
+
+.admin-card {
+  cursor: default !important;
+  transition: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.admin-card:hover,
+.admin-card:active,
+.admin-card:focus {
+  background: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  outline: none !important;
+  filter: none !important;
+}
