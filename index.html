@@ -263,8 +263,8 @@
         <p class="${isOwner ? 'role-title' : ''}">${role}</p>
         <div class="admin-stats" data-id="${id}">
           <p><span id="${id}-username">...</span></p>
-          <p><strong>Followers:</strong> <span id="${id}-followers">...</span></p>
-          <p><strong>Likes:</strong> <span id="${id}-likes">...</span></p>
+          <p><strong>Followers :</strong> <span id="${id}-followers">...</span></p>
+          <p><strong>Likes :</strong> <span id="${id}-likes">...</span></p>
         </div>
       `;
       wrapper.appendChild(slide);
@@ -508,7 +508,7 @@
           document.getElementById(`${id}-followers`).innerText = formatNumber(stats.followers);
           document.getElementById(`${id}-likes`).innerText = formatNumber(stats.likes);
         } else {
-          document.getElementById(`${id}-username`).innerText = "Error";
+          document.getElementById(`${id}-username`).innerText = "-";
           document.getElementById(`${id}-followers`).innerText = "-";
           document.getElementById(`${id}-likes`).innerText = "-";
         }
