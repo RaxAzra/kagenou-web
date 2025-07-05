@@ -2,20 +2,17 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-  <title>Kagenou Family</title>
-  <meta name="description" content="-" />
+  <title>𝗞𝗮𝗴𝗲𝗻𝗼𝘂 𝗙𝗮𝗺𝗶𝗹𝘆</title>
+  <meta name="description" content="Creator Anime Society" />
   <meta name="theme-color" content="#a64eff" />
-  <meta name="author" content="Kagenou | Dev Team" />
+  <meta name="author" content="KGN | Dev Team" />
 
   <!-- SEO & Sosial Media -->
   <meta property="og:title" content="Kagenou Family" />
   <meta property="og:description" content="Creator Anime Society" />
   <meta property="og:image" content="source/komunitas.jpg" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ajrahhh.my.id/" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kagenou Family" />
@@ -25,566 +22,675 @@
   <!-- Favicon -->
   <link rel="icon" href="source/komunitas.jpg" type="image/png" />
 
-  <!-- Fonts & CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fontlibrary.org/face/symbola" type="text/css" />
-  <link rel="stylesheet" href="https://fontlibrary.org/face/symbola" type="text/css" media="screen" />
-  <link rel="stylesheet" href="https://unpkg.com/@fontsource/unifont/index.css">
-
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
+  <!-- Lock scroll behavior on body when modal is open -->
   <body class="scroll-locked">
+
+  <!-- Aurora Background Section -->
   <div class="aurora-section-wrapper">
-    <div class="aurora-wrapper">
-      <div class="aurora-container">
-        <div class="aurora aurora-1"></div>
-        <div class="aurora aurora-2"></div>
-        <div class="aurora aurora-3"></div>
-        <div class="aurora aurora-4"></div>
-        <div class="aurora aurora-5"></div>
-        <div class="aurora aurora-6"></div>
+  <div class="aurora-wrapper">
+    <div class="aurora-container">
+      <div class="aurora aurora-1"></div>
+      <div class="aurora aurora-2"></div>
+      <div class="aurora aurora-3"></div>
+      <div class="aurora aurora-4"></div>
+      <div class="aurora aurora-5"></div>
+      <div class="aurora aurora-6"></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero animate-on-scroll">
+    <div class="text-wrapper animate-on-scroll">
+      <h2>Hello, Welcome in</h2>
+      <h1>Kagenou Family</h1>
+    </div>
+
+    <div class="button-container animate-on-scroll">
+      <div class="top-buttons">
+
+        <a href="#" class="home-button" onclick="scrollToHome(event)">
+          <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
+          </svg>
+          <span>Home</span>
+        </a>
+
+        <a href="#" class="home-button" onclick="openMemberModal(); return false;">
+          <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+          </svg>
+          <span>Member</span>
+        </a>
+
       </div>
-    </div>
 
-  <!-- Hero Section (tampilan awal) -->
-<!-- Hero Section (tampilan awal) -->
-<section class="hero animate-on-scroll">
-
-  <div class="text-wrapper animate-on-scroll">
-    <h2>Hello, Welcome in</h2>
-    <h1>Kagenou Family</h1>
-  </div>
-
-  <div class="button-container animate-on-scroll">
-    <div class="top-buttons">
-      <a href="#" class="home-button" onclick="scrollToHome(event)">
+      <a href="#" class="home-button announcement-button" onclick="openAnnouncement(); return false;">
         <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
-        <span>Home</span>
+        <span>Announcement</span>
       </a>
 
-      <a href="#" class="home-button" onclick="openMemberModal(); return false;">
+      <a href="#" class="home-button announcement-button" onclick="openTopMember(); return false;">
         <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+          <path d="M12 2l3.09 6.26L22 9.27l-5.5 5.36L18.18 22 12 18.27 5.82 22l1.68-7.37L2 9.27l6.91-1.01L12 2z" />
         </svg>
-        <span>Member</span>
+        <span>Top Member</span>
       </a>
-    </div>
-
-    <a href="#" class="home-button announcement-button" onclick="openAnnouncement(); return false;">
-      <svg viewBox="0 0 24 24" class="home-icon" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-      <span>Announcement</span>
-    </a>
-  </div>
-
-</section>
-
-<!-- Modal: List Member -->
-<div id="memberModal" class="modal-overlay hidden">
-  <div class="modal-box">
-    <h2>Daftar Anak KGN</h2>
-    <input type="text" id="searchInput" placeholder="Cari member ..." />
-    <ul id="memberList" class="member-list"></ul>
-    <button onclick="closeModal()">Tutup</button>
-  </div>
-</div>
-
-<!-- Modal: Detail TikTok -->
-<div id="detailModal" class="modal-overlay hidden">
-  <div class="modal-box">
-    <div id="detailContent">Loading...</div>
-    <button onclick="closeDetail()">Tutup</button>
-  </div>
-</div>
-
-<div id="announcementModal" class="modal-overlay hidden">
-  <div class="modal-content animate-modal">
-    <h2>Announcement</h2>
-    <div class="modal-body" id="announcement-list">
-      <p id="announcement-text">Tidak ada pengumuman saat ini.</p>
-    </div>
-    <button onclick="closeAnnouncement()" class="modal-close">Tutup</button>
-  </div>
-</div>
-
-<!-- Bagian Bawah -->
-<section id="home" class="home-section fancy-home animate-on-scroll">
-  <h2 class="gallery-title">Sebuah Marga Kreator <span class="gold-text">Anime</span>, <span class="gold-text">Game</span>, <span class="gold-text">JJ</span> atau lainnya.</h2>
-
-  <section class="card-gallery">
-    <div class="cards">
-      <img src="source/gen_1.jpg" alt="gen_1" onclick="openCard(0)">
-      <img src="source/gen_2.jpg" alt="gen_2" onclick="openCard(1)">
-      <img src="source/gen_3.jpg" alt="gen_3" onclick="openCard(2)">
-      <img src="source/leader.jpg" alt="leader" onclick="openCard(3)">
-      <img src="source/mlbb.jpg" alt="mlbb" onclick="openCard(4)">
-      <img src="source/ff.jpg" alt="ff" onclick="openCard(5)">
-      <img src="source/editor.jpg" alt="editor" onclick="openCard(6)">
-      <img src="source/bot.jpg" alt="bot" onclick="openCard(7)">
-      <img src="source/activity.jpg" alt="activity" onclick="openCard(8)">
     </div>
   </section>
-  <div class="scroll-down-btn">
-    <a href="#tutorial" onclick="document.querySelector('#tutorial').scrollIntoView({ behavior: 'smooth' }); return false;">
-      <svg class="scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
-    </a>
+
+  <!-- Modal: List Member -->
+  <div id="memberModal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h2>Daftar Anak KGN</h2>
+      <input type="text" id="searchInput" placeholder="Cari member ..." />
+      <ul id="memberList" class="member-list"></ul>
+      <button onclick="closeModal()">Tutup</button>
+    </div>
   </div>
-</section>
 
-<!-- Modal Galeri (diletakkan di luar .gallery-container) -->
-<div id="cardModal" class="card-modal" onclick="closeCard()">
-  <div class="card-content" onclick="event.stopPropagation()">
-    <img id="modalImg" src="" alt="">
-    <h3 id="modalTitle">Judul</h3>
-    <p id="modalDesc">Deskripsi</p>
+  <!-- Modal: Detail TikTok -->
+  <div id="detailModal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div id="detailContent">Loading...</div>
+      <button onclick="closeDetail()">Tutup</button>
+    </div>
   </div>
-</div>
 
-<section id="tutorial" class="timeline-section animate-on-scroll">
-  <h2 class="timeline-title">Tutorial Seleksi Kagenou</h2>
-  <div class="timeline-container">
-
-    <div class="timeline-item animate-step left">
-    <div class="timeline-content">
-      <div class="icon-circle">1</div>
-      <div class="text">
-        Silakan bergabung di Grup Seleksi Kagenou
-        <a href="https://chat.whatsapp.com/JOpfDA7ooxqKRAGYcAYpX7?mode=r_c" target="_blank" style="color:#a64eff; font-weight:600;">
-          Klik di sini
-        </a>.
+  <!-- Modal: Announcement -->
+  <div id="announcementModal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h2>Announcement</h2>
+      <div class="modal-body" id="announcement-list">
+        <p id="announcement-text">Tidak ada pengumuman saat ini.</p>
       </div>
+      <button onclick="closeAnnouncement()" class="modal-close">Tutup</button>
     </div>
   </div>
 
-  <div class="timeline-item animate-step right">
-    <div class="timeline-content">
-      <div class="text">Sesudah masuk. Klik " Lanjutkan " yang dikirim oleh Bot resmi Kagenou ( Sumika ).</div>
-      <div class="icon-circle">2</div>
+  <!-- Section: Home Gallery -->
+  <section id="home" class="home-section fancy-home animate-on-scroll">
+    <h2 class="gallery-title">
+      Sebuah Marga Kreator <span class="gold-text">Anime</span>, 
+      <span class="gold-text">Game</span>, 
+      <span class="gold-text">JJ</span> atau lainnya.
+    </h2>
+
+    <section class="card-gallery">
+      <div class="cards">
+        <img src="source/gen_1.jpg" alt="gen_1" onclick="openCard(0)">
+        <img src="source/gen_2.jpg" alt="gen_2" onclick="openCard(1)">
+        <img src="source/gen_3.jpg" alt="gen_3" onclick="openCard(2)">
+        <img src="source/leader.jpg" alt="leader" onclick="openCard(3)">
+        <img src="source/mlbb.jpg" alt="mlbb" onclick="openCard(4)">
+        <img src="source/ff.jpg" alt="ff" onclick="openCard(5)">
+        <img src="source/editor.jpg" alt="editor" onclick="openCard(6)">
+        <img src="source/bot.jpg" alt="bot" onclick="openCard(7)">
+        <img src="source/activity.jpg" alt="activity" onclick="openCard(8)">
+      </div>
+    </section>
+
+    <div class="scroll-down-btn">
+      <a href="#tutorial" onclick="document.querySelector('#tutorial').scrollIntoView({ behavior: 'smooth' }); return false;">
+        <svg class="scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Modal: Card Detail -->
+  <div id="cardModal" class="card-modal" onclick="closeCard()">
+    <div class="card-content" onclick="event.stopPropagation()">
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalTitle">Judul</h3>
+      <p id="modalDesc">Deskripsi</p>
     </div>
   </div>
 
-  <div class="timeline-item animate-step left">
-    <div class="timeline-content">
-      <div class="icon-circle">3</div>
-      <div class="text">Ikuti petunjuk dari Bot Sumika atau ketik Perintah " .seleksi "</div>
-    </div>
-  </div>
+  <!-- Section: Tutorial Seleksi -->
+  <section id="tutorial" class="timeline-section animate-on-scroll">
+    <h2 class="timeline-title">Tutorial Seleksi Kagenou</h2>
+    <div class="timeline-container">
 
-  <div class="timeline-item animate-step right">
-    <div class="timeline-content">
-      <div class="text">Jika sudah terselesaikan. Silakan menunggu balasan dari Admin.</div>
-      <div class="icon-circle">4</div>
-    </div>
-  </div>
-
-  </div>
-</section>
-
-<!-- Bagian Admin -->
-
-<!-- Bagian Admin -->
-<section id="admin-section" class="admin-section">
-  <h2>Admin Kagenou</h2>
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-
-      <div class="swiper-slide admin-card">
-        <img src="source/logo.png" alt="Sora">
-        <h3>Sora</h3>
-        <p>Keamanan</p>
-        <div class="admin-stats">
-          <p><span id="sora-username">...</span></p>
-          <p><strong>Followers:</strong> <span id="sora-followers">...</span></p>
-          <p><strong>Likes:</strong> <span id="sora-likes">...</span></p>
+      <div class="timeline-item animate-step left">
+        <div class="timeline-content">
+          <div class="icon-circle">1</div>
+          <div class="text">
+            Silakan bergabung di Grup Seleksi Kagenou
+            <a href="https://chat.whatsapp.com/JOpfDA7ooxqKRAGYcAYpX7?mode=r_c" target="_blank" style="color:#a64eff; font-weight:600;">
+              Klik di sini
+            </a>.
+          </div>
         </div>
       </div>
 
-      <div class="swiper-slide admin-card owner">
-        <img src="source/logo.png" alt="Ryy Kagenou>"
-        <h3>Ryy Kagenou</h3>
-        <p class="role-title">Pemilik</p>
-        <div class="admin-stats">
-          <p><span id="ryy-username">...</span></p>
-          <p><strong>Followers:</strong> <span id="ryy-followers">...</span></p>
-          <p><strong>Likes:</strong> <span id="ryy-likes">...</span></p>
+      <div class="timeline-item animate-step right">
+        <div class="timeline-content">
+          <div class="text">Sesudah masuk. Klik " Lanjutkan " yang dikirim oleh Bot resmi Kagenou ( Sumika ).</div>
+          <div class="icon-circle">2</div>
         </div>
       </div>
 
-      <div class="swiper-slide admin-card">
-        <img src="source/logo.png" alt="Ranz">
-        <h3>Ranz</h3>
-        <p>Keamanan</p>
-        <div class="admin-stats">
-          <p><span id="ranz-username">...</span></p>
-          <p><strong>Followers:</strong> <span id="ranz-followers">...</span></p>
-          <p><strong>Likes:</strong> <span id="ranz-likes">...</span></p>
+      <div class="timeline-item animate-step left">
+        <div class="timeline-content">
+          <div class="icon-circle">3</div>
+          <div class="text">Ikuti petunjuk dari Bot Sumika atau ketik Perintah " .seleksi "</div>
+        </div>
+      </div>
+
+      <div class="timeline-item animate-step right">
+        <div class="timeline-content">
+          <div class="text">Jika sudah terselesaikan. Silakan menunggu balasan dari Admin. Semoga beruntung >_<</div>
+          <div class="icon-circle">4</div>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="kagenou-footer">
-  <div class="footer-content">
-    <p>&copy; 2025 Kagenou Family  -  by <strong>KGN DevTeam</strong></p>
-    <ul class="footer-links">
-      <li>
-        <a href="https://www.tiktok.com/@kagenoufamily" target="_blank" aria-label="TikTok">
-          <svg class="icon" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M34.5 6c-2.2 0-4-1.8-4-4h-6c0 7.5 6 13.5 13.5 13.5v-6c-1.5 0-3.2-.5-4.5-1.5v22.8c0 4.2-3.3 7.8-7.5 8-4.5.2-8.2-3.5-8.2-8 0-4.2 3.3-7.7 7.5-8v-6c-7.5 0-13.5 6-13.5 13.5S23.3 44 30.5 44c7.4 0 13.5-6 13.5-13.5V6h-9z"/>
-          </svg>
-          TikTok Official
-        </a>
-      </li>
-    </ul>
-  </div>
-</footer>
- <!-- ==================================== TIPE JAVASCRIPT ==================================== -->
-<script>
-function showAnnouncementModal() {
-  document.getElementById('announcementModal').classList.remove('hidden');
-}
+  <!-- Section: Admin Kagenou -->
+  <section id="admin-section" class="admin-section timeline-section animate-on-scroll">
+    <h2>Leader Kagenou</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
 
-fetch(`announcement.json?cb=${Date.now()}`)
-  .then(res => res.json())
-  .then(data => {
-    const listContainer = document.getElementById('announcement-list');
-    listContainer.innerHTML = ''; // Kosongkan dulu
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Sidzz">
+          <h3>Sidzz</h3>
+          <p>Collab Member</p>
+          <div class="admin-stats">
+            <p><span id="sidz-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="sidz-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="sidz-likes">...</span></p>
+          </div>
+        </div>
 
-    if (Array.isArray(data) && data.length > 0) {
-      data.forEach((item, index) => {
-        const p = document.createElement('p');
-        p.textContent = `${item.isi}`;
-        listContainer.appendChild(p);
-      });
-    } else {
-      listContainer.innerHTML = '<p>Tidak ada pengumuman saat ini.</p>';
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Rey">
+          <h3>Rey</h3>
+          <p>Collab Member</p>
+          <div class="admin-stats">
+            <p><span id="rey-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="rey-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="rey-likes">...</span></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Fyuze">
+          <h3>Fyuze</h3>
+          <p>Collab Member</p>
+          <div class="admin-stats">
+            <p><span id="fyuze-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="fyuze-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="fyuze-likes">...</span></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Sora">
+          <h3>Sora</h3>
+          <p>Security</p>
+          <div class="admin-stats">
+            <p><span id="sora-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="sora-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="sora-likes">...</span></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide admin-card owner">
+          <img src="source/logo.png" alt="Ryy Kagenou">
+          <h3>Ryy Kagenou</h3>
+          <p class="role-title">Owner</p>
+          <div class="admin-stats">
+            <p><span id="ryy-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="ryy-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="ryy-likes">...</span></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Ranz">
+          <h3>Ranz</h3>
+          <p>Security</p>
+          <div class="admin-stats">
+            <p><span id="ranz-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="ranz-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="ranz-likes">...</span></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Sena">
+          <h3>Sena</h3>
+          <p>Collab Member</p>
+          <div class="admin-stats">
+            <p><span id="sena-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="sena-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="sena-likes">...</span></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Miruki">
+          <h3>Miruki</h3>
+          <p>Collab Member</p>
+          <div class="admin-stats">
+            <p><span id="miruki-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="miruki-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="miruki-likes">...</span></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide admin-card">
+          <img src="source/logo.png" alt="Miruki">
+          <h3>Tia</h3>
+          <p>Collab Member</p>
+          <div class="admin-stats">
+            <p><span id="miruki-username">...</span></p>
+            <p><strong>Followers:</strong> <span id="miruki-followers">...</span></p>
+            <p><strong>Likes:</strong> <span id="miruki-likes">...</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Footer -->
+  <footer class="kagenou-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Kagenou Family – by <strong>KGN DevTeam</strong></p>
+      <ul class="footer-links">
+        <li>
+          <a href="https://www.tiktok.com/@kagenoufamily" target="_blank" aria-label="TikTok">
+            <svg class="icon" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M34.5 6c-2.2 0-4-1.8-4-4h-6c0 7.5 6 13.5 13.5 13.5v-6c-1.5 0-3.2-.5-4.5-1.5v22.8c0 4.2-3.3 7.8-7.5 8-4.5.2-8.2-3.5-8.2-8 0-4.2 3.3-7.7 7.5-8v-6c-7.5 0-13.5 6-13.5 13.5S23.3 44 30.5 44c7.4 0 13.5-6 13.5-13.5V6h-9z"/>
+            </svg>
+            TikTok Official
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Script: Top Member Modal Handler -->
+  <script>
+    async function openTopMember() {
+      const res = await fetch('./database/topmember.json');
+      const data = await res.json();
+
+      const sorted = Object.entries(data)
+        .sort(([, a], [, b]) => b.count - a.count)
+        .slice(0, 3);
+
+      const emoji = ['🥇', '🥈', '🥉'];
+
+      const modal = document.createElement('div');
+      modal.className = 'modal-overlay fade-in';
+      modal.id = 'topMemberModal';
+
+      modal.innerHTML = `
+        <div class="modal-box animate-modal top-member-modal">
+          <h2>Top Member of KGN</h2>
+          <div class="modal-body top-member-list">
+            ${sorted.map(([_, user], i) => `
+              <div class="top-member animate-rank" style="animation-delay: ${i * 0.2}s;">
+                ${emoji[i]} <strong>${user.nickname}</strong> <span> (@${user.username})</span>
+              </div>
+            `).join('')}
+          </div>
+          <button class="modal-close" onclick="closeTopMember()">Close</button>
+        </div>
+      `;
+      document.body.appendChild(modal);
     }
-  })
-  .catch(err => {
-    console.error('[❌] Gagal ambil pengumuman:', err);
-    document.getElementById('announcement-list').innerHTML = '<p>Tidak ada pengumuman saat ini.</p>';
-  });
-</script>
 
-<script>
-  async function openMemberModal() {
-    const modal = document.getElementById('memberModal');
-    const list = document.getElementById('memberList');
-    const searchInput = document.getElementById('searchInput');
+    function closeTopMember() {
+      const modal = document.getElementById('topMemberModal');
+      if (!modal) return;
 
-    list.innerHTML = 'Memuat...';
-    modal.style.display = 'flex';
-    modal.classList.remove('hidden');
+      modal.classList.remove('fade-in');
+      modal.classList.add('fade-out');
 
-    const res = await fetch('./user_kagenou.json');
-    const data = await res.json();
-    let members = Object.entries(data);
+      setTimeout(() => {
+        modal.remove();
+      }, 300);
+    }
+  </script>
 
-    function renderList(filter = '') {
-      list.innerHTML = '';
-      members.forEach(([id, user]) => {
-        if (
-          user.nickname.toLowerCase().includes(filter.toLowerCase()) ||
-          user.username.toLowerCase().includes(filter.toLowerCase())
-        ) {
-          const li = document.createElement('li');
-          li.textContent = `${user.nickname} (@${user.username})`;
-          li.onclick = () => openDetail(user.username);
-          list.appendChild(li);
+  <!-- Script: Announcement Modal Handler -->
+  <script>
+    function showAnnouncementModal() {
+      const modal = document.getElementById('announcementModal');
+      modal.classList.remove('hidden');
+    }
+
+    async function loadAnnouncements() {
+      try {
+        const res = await fetch(`./database/announcement.json?cb=${Date.now()}`);
+        const data = await res.json();
+        const listContainer = document.getElementById('announcement-list');
+        listContainer.innerHTML = '';
+
+        if (Array.isArray(data) && data.length > 0) {
+          data.forEach((item) => {
+            const p = document.createElement('p');
+            p.textContent = item.isi;
+            listContainer.appendChild(p);
+          });
+        } else {
+          listContainer.innerHTML = '<p>Tidak ada pengumuman saat ini.</p>';
         }
-      });
-    }
-
-    searchInput.addEventListener('input', (e) => renderList(e.target.value));
-    renderList();
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('memberModal');
-    modal.style.display = 'none';
-    modal.classList.add('hidden');
-
-    setTimeout(() => {
-      modal.classList.remove('fade-out');
-      modal.classList.add('hidden');
-    }, 200);
-  }
-
-  async function openDetail(username) {
-    const modal = document.getElementById('detailModal');
-    const content = document.getElementById('detailContent');
-    modal.classList.remove('hidden');
-    content.innerHTML = 'Loading...';
-
-    try {
-      const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
-      const json = await res.json();
-
-      if (json.status === 200 && json.data) {
-        const u = json.data.user;
-        const stats = json.data.stats;
-
-        const bio = u.signature || '-';
-        const bioLink = u.bioLink?.link ? `<div class="detail-link"><a href="${u.bioLink.link}" target="_blank">🔗 ${u.bioLink.link}</a></div>` : '';
-
-        content.innerHTML = `
-          <div class="tiktok-detail">
-            <img class="detail-avatar" src="${u.avatarLarger}" alt="${u.nickname}">
-            <div class="detail-nama">${u.nickname}</div>
-            <div class="detail-username">@${u.uniqueId}</div>
-            <div class="detail-bio">${bio}</div>
-            ${bioLink}
-            <div class="detail-stats-vertical">
-              <div>Pengikut : ${stats.followerCount.toLocaleString()}</div>
-              <div>Di ikuti : ${stats.followingCount.toLocaleString()}</div>
-              <div>Total Suka : ${stats.heartCount.toLocaleString()}</div>
-              <div>Total Video : ${stats.videoCount} video</div>
-            </div>
-          </div>`;
-      } else {
-        content.innerHTML = 'Data tidak ditemukan.';
+      } catch (error) {
+        console.error('[❌] Gagal memuat pengumuman:', error);
+        document.getElementById('announcement-list').innerHTML = '<p>Gagal memuat data :(</p>';
       }
-    } catch (e) {
-      content.innerHTML = 'Gagal mengambil data.';
     }
-  }
 
-  function closeDetail() {
-    document.getElementById('detailModal').classList.add('hidden');
-  }
-</script>
+    // Panggil saat halaman dimuat
+    window.addEventListener('DOMContentLoaded', loadAnnouncements);
+  </script>
 
-<script>
-async function fetchStats(username) {
-  try {
-    const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
-    const json = await res.json();
-    const stats = json?.data?.stats;
-    const user = json?.data?.user;
+  <!-- Script: Member & Detail Modal Handler -->
+  <script>
+    async function openMemberModal() {
+      const modal = document.getElementById('memberModal');
+      const list = document.getElementById('memberList');
+      const searchInput = document.getElementById('searchInput');
 
-    return {
-      nickname: user?.nickname || 'Not Found',
-      followers: stats?.followerCount || 0,
-      likes: stats?.heartCount || 0
-    };
-  } catch (err) {
-    console.error(`gagal tod ${username}`, err);
-    return null;
-  }
-}
+      list.innerHTML = 'Loading ...';
+      modal.style.display = 'flex';
+      modal.classList.remove('hidden', 'fade-out');
+      modal.classList.add('fade-in');
 
-function formatNumber(n) {
-  return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M'
-       : n >= 1e3 ? (n / 1e3).toFixed(1) + 'K'
-       : n;
-}
+      const res = await fetch('./database/user_kagenou.json');
+      const data = await res.json();
+      let members = Object.entries(data);
 
-async function updateStats() {
-  const sora = await fetchStats('sorawangyy');
-  if (sora) {
-    document.getElementById("sora-username").innerText = sora.nickname;
-    document.getElementById("sora-followers").innerText = formatNumber(sora.followers);
-    document.getElementById("sora-likes").innerText = formatNumber(sora.likes);
-  }
+      function renderList(filter = '') {
+        list.innerHTML = '';
+        members.forEach(([id, user]) => {
+          if (
+            user.nickname.toLowerCase().includes(filter.toLowerCase()) ||
+            user.username.toLowerCase().includes(filter.toLowerCase())
+          ) {
+            const li = document.createElement('li');
+            li.textContent = `${user.nickname} (@${user.username})`;
+            li.onclick = () => openDetail(user.username);
+            list.appendChild(li);
+          }
+        });
+      }
 
-  const ryy = await fetchStats('ryy_kagenou18');
-  if (sora) {
-    document.getElementById("ryy-username").innerText = ryy.nickname;
-    document.getElementById("ryy-followers").innerText = formatNumber(ryy.followers);
-    document.getElementById("ryy-likes").innerText = formatNumber(ryy.likes);
-  }
+      searchInput.addEventListener('input', (e) => renderList(e.target.value));
+      renderList();
+    }
 
-  const ranz = await fetchStats('y.rexyz');
-  if (ranz) {
-    document.getElementById("ranz-username").innerText = ranz.nickname;
-    document.getElementById("ranz-followers").innerText = formatNumber(ranz.followers);
-    document.getElementById("ranz-likes").innerText = formatNumber(ranz.likes);
-  }
-}
+    function closeModal() {
+      const modal = document.getElementById('memberModal');
+      modal.classList.remove('fade-in');
+      modal.classList.add('fade-out');
 
-window.addEventListener('DOMContentLoaded', updateStats);
-</script>
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+      }, 300); // durasi animasi fade-out
+    }
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const steps = document.querySelectorAll('.animate-step');
+    async function openDetail(username) {
+      const modal = document.getElementById('detailModal');
+      const content = document.getElementById('detailContent');
+      modal.classList.remove('hidden', 'fade-out');
+      modal.classList.add('fade-in');
+      content.innerHTML = 'Loading...';
+
+      try {
+        const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
+        const json = await res.json();
+
+        if (json.status === 200 && json.data) {
+          const u = json.data.user;
+          const stats = json.data.stats;
+
+          const bio = u.signature || '-';
+          const bioLink = u.bioLink?.link
+            ? `<div class="detail-link"><a href="${u.bioLink.link}" target="_blank">🔗 ${u.bioLink.link}</a></div>`
+            : '';
+
+          content.innerHTML = `
+            <div class="tiktok-detail">
+              <img class="detail-avatar" src="${u.avatarLarger}" alt="${u.nickname}">
+              <div class="detail-nama">${u.nickname}</div>
+              <div class="detail-username">@${u.uniqueId}</div>
+              <div class="detail-bio">${bio}</div>
+              ${bioLink}
+              <div class="detail-stats-vertical">
+                <div>Pengikut : ${stats.followerCount.toLocaleString()}</div>
+                <div>Di ikuti : ${stats.followingCount.toLocaleString()}</div>
+                <div>Total Suka : ${stats.heartCount.toLocaleString()}</div>
+                <div>Total Video : ${stats.videoCount} video</div>
+              </div>
+            </div>`;
+        } else {
+          content.innerHTML = 'Data tidak ditemukan.';
+        }
+      } catch (e) {
+        content.innerHTML = 'Gagal mengambil data.';
+      }
+    }
+
+    function closeDetail() {
+      const modal = document.getElementById('detailModal');
+      modal.classList.remove('fade-in');
+      modal.classList.add('fade-out');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+  </script>
+
+  <!-- Script: Update TikTok Stats di Section Admin -->
+  <script>
+    async function fetchStats(username) {
+      try {
+        const res = await fetch(`https://api.tiklydown.eu.org/api/stalk?user=${username}`);
+        const json = await res.json();
+        const stats = json?.data?.stats;
+        const user = json?.data?.user;
+
+        return {
+          nickname: user?.nickname || 'Not Found',
+          followers: stats?.followerCount || 0,
+          likes: stats?.heartCount || 0
+        };
+      } catch (err) {
+        console.error(`❌ Gagal fetch ${username}`, err);
+        return null;
+      }
+    }
+
+    function formatNumber(n) {
+      return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M'
+          : n >= 1e3 ? (n / 1e3).toFixed(1) + 'K'
+          : n;
+    }
+
+    async function updateStats() {
+      const users = [
+        { id: "sora", username: "sorawangyy" },
+        { id: "ryy", username: "ryy_kagenou18" },
+        { id: "ranz", username: "y.rexyz" },
+        { id: "fyuze", username: "fyuzenime03" },
+        { id: "sena", username: "senakayeye_" },
+        { id: "rey", username: "reydwinug" },
+        { id: "miruki", username: "miruke._mi" },
+        { id: "sidz", username: "sidzz_nihhh" }
+      ];
+
+      for (let i = 0; i < users.length; i++) {
+        const { id, username } = users[i];
+
+        document.getElementById(`${id}-username`).innerText = "Loading ...";
+        document.getElementById(`${id}-followers`).innerText = "-";
+        document.getElementById(`${id}-likes`).innerText = "-";
+
+        const stats = await fetchStats(username);
+
+        if (stats) {
+          document.getElementById(`${id}-username`).innerText = stats.nickname;
+          document.getElementById(`${id}-followers`).innerText = formatNumber(stats.followers);
+          document.getElementById(`${id}-likes`).innerText = formatNumber(stats.likes);
+        } else {
+          document.getElementById(`${id}-username`).innerText = "Error";
+          document.getElementById(`${id}-followers`).innerText = "-";
+          document.getElementById(`${id}-likes`).innerText = "-";
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 1000)); // delay 1 detik antar request
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', updateStats);
+  </script>
+
+  <!-- Script: Open & Close Announcement Modal -->
+  <script>
+    function openAnnouncement() {
+      const modal = document.getElementById("announcementModal");
+      modal.classList.remove("hidden", "fade-out");
+      modal.classList.add("fade-in");
+    }
+
+    function closeAnnouncement() {
+      const modal = document.getElementById("announcementModal");
+      modal.classList.remove("fade-in");
+      modal.classList.add("fade-out");
+
+      setTimeout(() => {
+        modal.classList.add("hidden");
+        modal.classList.remove("fade-out");
+      }, 300); // durasi animasi
+    }
+  </script>
+
+  <!-- Script: Scroll-based Animation Trigger (Using IntersectionObserver) -->
+  <script>
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          steps.forEach((el, i) => {
-            setTimeout(() => {
-              el.classList.add('show');
-            }, i * 250);
-          });
-          observer.disconnect(); // stop observing after triggered
+          entry.target.classList.remove('show');
+          void entry.target.offsetWidth;
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.3 });
 
-    if (steps.length > 0) {
-      observer.observe(steps[0]);
-    }
-  });
-</script>
+    animatedElements.forEach(el => observer.observe(el));
+  </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.glass-float-container');
-    const count = 15; // Jumlah panel diperbanyak
-
-    for (let i = 0; i < count; i++) {
-      const panel = document.createElement('div');
-      panel.className = 'panel';
-
-      const size = 40 + Math.random() * 50;
-      panel.style.width = `${size}px`;
-      panel.style.height = `${size / 1.8}px`;
-      panel.style.top = `${Math.random() * 80}%`;
-      panel.style.left = `${Math.random() * 80}%`;
-
-      const delay = Math.random() * 15;
-      const duration = 10 + Math.random() * 15;
-
-      panel.style.animationDuration = `${duration}s`;
-      panel.style.animationDelay = `${delay}s`;
-
-      container.appendChild(panel);
-    }
-  });
-</script>
-
-<script>
-  function openAnnouncement() {
-    const modal = document.getElementById("announcementModal");
-    modal.classList.remove("hidden");
-  }
-
-  function closeAnnouncement() {
-    const modal = document.getElementById("announcementModal");
-    modal.classList.add("hidden");
-  }
-</script>
-
-<script>
-  // Ambil semua elemen yang punya animasi
-  const animatedElements = document.querySelectorAll('.animate-on-scroll');
-
-  // Observer tunggal untuk semuanya
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('show');
-        void entry.target.offsetWidth;
-        entry.target.classList.add('show');
-      } else {
-        entry.target.classList.remove('show'); // Biar bisa retrigger
-      }
+  <!-- Script: Initial Trigger on Page Load (for above-the-fold elements) -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('show');
+        }
+      });
     });
-  }, { threshold: 0.3 });
+  </script>
 
-  // Daftarkan semua elemen untuk diamati
-  animatedElements.forEach(el => observer.observe(el));
-</script>
+  <!-- Script: Card Modal Viewer (Gallery Section) -->
+  <script>
+    const cards = [
+      { img: "source/gen_1.jpg", title: "Kagenou Gen I", desc: "Generasi pertama pendiri komunitas." },
+      { img: "source/gen_2.jpg", title: "Kagenou Gen II", desc: "Melanjutkan jejak dan memperluas." },
+      { img: "source/gen_3.jpg", title: "Kagenou Gen III", desc: "Generasi kreator muda berbakat." },
+      { img: "source/leader.jpg", title: "Leader", desc: "Pemimpin utama Kagenou Family." },
+      { img: "source/mlbb.jpg", title: "Divisi MLBB", desc: "Divisi aktif di dunia Mobile Legends." },
+      { img: "source/ff.jpg", title: "Divisi Free Fire", desc: "Divisi penuh strategi dan aksi." },
+      { img: "source/editor.jpg", title: "Editor", desc: "Tim visual dan desain grafis." },
+      { img: "source/bot.jpg", title: "Bot Developer", desc: "Pengembang bot Sumika AI." },
+      { img: "source/activity.jpg", title: "Aktivitas", desc: "Kegiatan dan event komunitas." },
+    ];
 
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        el.classList.add('show');
-      }
-    });
-  });
-</script>
+    function openCard(index) {
+      const modal = document.getElementById("cardModal");
+      const img = document.getElementById("modalImg");
+      const title = document.getElementById("modalTitle");
+      const desc = document.getElementById("modalDesc");
+      if (!modal || !img || !title || !desc) return;
 
-<script>
-  const cards = [
-    { img: "source/gen_1.jpg", title: "Kagenou Gen I", desc: "Generasi pertama pendiri komunitas." },
-    { img: "source/gen_2.jpg", title: "Kagenou Gen II", desc: "Melanjutkan jejak dan memperluas." },
-    { img: "source/gen_3.jpg", title: "Kagenou Gen III", desc: "Generasi kreator muda berbakat." },
-    { img: "source/leader.jpg", title: "Leader", desc: "Pemimpin utama Kagenou Family." },
-    { img: "source/mlbb.jpg", title: "Divisi MLBB", desc: "Divisi aktif di dunia Mobile Legends." },
-    { img: "source/ff.jpg", title: "Divisi Free Fire", desc: "Divisi penuh strategi dan aksi." },
-    { img: "source/editor.jpg", title: "Editor", desc: "Tim visual dan desain grafis." },
-    { img: "source/bot.jpg", title: "Bot Developer", desc: "Pengembang bot Sumika AI." },
-    { img: "source/activity.jpg", title: "Aktivitas", desc: "Kegiatan dan event komunitas." },
-  ];
+      const data = cards[index];
+      img.src = data.img;
+      title.textContent = data.title;
+      desc.textContent = data.desc;
 
-  function openCard(index) {
-    const modal = document.getElementById("cardModal");
-    const img = document.getElementById("modalImg");
-    const title = document.getElementById("modalTitle");
-    const desc = document.getElementById("modalDesc");
-    if (!modal || !img || !title || !desc) return;
-    const data = cards[index];
-    img.src = data.img;
-    title.textContent = data.title;
-    desc.textContent = data.desc;
-    modal.classList.add("show");
-    document.body.classList.add("modal-open");
-  }
-
-  function closeCard() {
-    const modal = document.getElementById("cardModal");
-    if (!modal) return;
-    modal.classList.remove("show");
-    document.body.classList.remove("modal-open");
-  }
-</script>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  const RYY_INDEX = 1;
-  const swiper = new Swiper('.mySwiper', {
-    loop: false,
-    grabCursor: true,
-    centeredSlides: true,
-    spaceBetween: 20,
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-
-  function centerRyyBasedOnScreen() {
-    let targetIndex = RYY_INDEX;
-    if (window.innerWidth <= 768) {
-      targetIndex = RYY_INDEX;
+      modal.classList.add("show");
+      document.body.classList.add("modal-open");
     }
-    swiper.slideTo(targetIndex, 0);
-  }
 
-  setTimeout(centerRyyBasedOnScreen, 300);
-  window.addEventListener('resize', () => {
+    function closeCard() {
+      const modal = document.getElementById("cardModal");
+      if (!modal) return;
+
+      modal.classList.remove("show");
+      document.body.classList.remove("modal-open");
+    }
+  </script>
+
+  <!-- SwiperJS Initialization (Admin Section Carousel) -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const RYY_INDEX = 4;
+    const swiper = new Swiper('.mySwiper', {
+      loop: false,
+      grabCursor: true,
+      centeredSlides: true,
+      spaceBetween: 20,
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    function centerRyyBasedOnScreen() {
+      let targetIndex = RYY_INDEX;
+      if (window.innerWidth <= 768) {
+        targetIndex = RYY_INDEX;
+      }
+      swiper.slideTo(targetIndex, 0);
+    }
+
     setTimeout(centerRyyBasedOnScreen, 300);
-  });
-</script>
+    window.addEventListener('resize', () => {
+      setTimeout(centerRyyBasedOnScreen, 300);
+    });
+  </script>
 
-<script>
-  function scrollToHome(event) {
-    event.preventDefault();
-    const homeSection = document.getElementById("home");
-    document.body.style.overflow = "auto";
-    homeSection.scrollIntoView({ behavior: "smooth" });
-  }
-</script>
+  <!-- Smooth Scroll for "Home" Button in Hero Section -->
+  <script>
+    function scrollToHome(event) {
+      event.preventDefault();
+      const homeSection = document.getElementById("home");
+      document.body.style.overflow = "auto";
+      homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 </body>
 </html>
