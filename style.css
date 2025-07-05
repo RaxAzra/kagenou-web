@@ -225,8 +225,8 @@ body:has(:target) {
   transition: transform 0.3s ease;
 }
 
-.admin-card, .admin-card * {
-  font-family: 'Aipon', sans-serif !important;
+.admin-card * {
+  font-family: 'Aipon', 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans Symbols', sans-serif !important;
 }
 
 .admin-card:hover {
@@ -243,6 +243,7 @@ body:has(:target) {
 }
 
 .admin-card h3 {
+  font-family: 'Aipon', 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.2em;
 }
@@ -268,11 +269,27 @@ body:has(:target) {
 }
 
 .admin-stats p {
+  font-family: 'Aipon', 'Noto Sans', sans-serif !important;
   margin: 0.2em 0;
   color: #ccc;
 }
+
+.admin-stats .unicode-fix {
+  font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans Symbols', sans-serif !important;
+}
+
+@layer components {
+  .unicode-safe {
+    font-family: system-ui, 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans Symbols', sans-serif !important;
+  }
+}
+
 .admin-stats strong {
   color: #a64eff;
+}
+
+.admin-stats p span {
+  font-family: 'Segoe UI Symbol', 'Noto Sans Symbols', sans-serif !important;
 }
 
 .admin-stats span {
@@ -1117,6 +1134,7 @@ body.scroll-locked {
 .modal-overlay.fade-out .modal-box {
   animation: fadeOutModal 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
 
 .modal-overlay.show .modal-box {
   animation: fadeInModal 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
