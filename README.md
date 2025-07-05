@@ -1,2 +1,2 @@
 # Kagenou Web
-(trigger test) <!-- tambahkan baris ini -->
+NYOCOT <!-- tambahkan baris ini -->
