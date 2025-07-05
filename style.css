@@ -1314,3 +1314,63 @@ body:not(.lock-scroll) {
     transform: scale(1);
   }
 }
+
+.top-member-modal h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.top-member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-member {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.top-member span {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tambahkan ini ke style.css */
+.fade-in {
+  opacity: 1;
+  backdrop-filter: blur(6px); /* Sesuaikan nilai blur-nya */
+  transition: opacity 0.6s ease, backdrop-filter 0.6s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  transition: opacity 0.6s ease, backdrop-filter 0.6s ease;
+}
+
+/* Mencegah text selection di seluruh halaman */
+body {
+  -webkit-user-select: none;  /* Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* Internet Explorer/Edge */
+  user-select: none;          /* Standard */
+}
