@@ -200,108 +200,7 @@
   <section id="admin-section" class="admin-section timeline-section animate-on-scroll">
     <h2>Leader Kagenou</h2>
     <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide admin-card">
-          <img src="source/logo.png" alt="Sidzz">
-          <h3>Sidzz</h3>
-          <p>Collab Member</p>
-          <div class="admin-stats">
-            <p><span id="sidz-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="sidz-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="sidz-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card">
-          <img src="source/rey.jpg" alt="Rey">
-          <h3>Rey</h3>
-          <p>Collab Member</p>
-          <div class="admin-stats">
-            <p><span id="rey-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="rey-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="rey-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card">
-          <img src="source/logo.png" alt="Fyuze">
-          <h3>Fyuze</h3>
-          <p>Collab Member</p>
-          <div class="admin-stats">
-            <p><span id="fyuze-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="fyuze-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="fyuze-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card">
-          <img src="source/logo.png" alt="Sora">
-          <h3>Sora</h3>
-          <p>Security</p>
-          <div class="admin-stats">
-            <p><span id="sora-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="sora-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="sora-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card owner">
-          <img src="source/logo.png" alt="Ryy Kagenou">
-          <h3>Ryy Kagenou</h3>
-          <p class="role-title">Owner</p>
-          <div class="admin-stats">
-            <p><span id="ryy-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="ryy-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="ryy-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card">
-          <img src="source/logo.png" alt="Ranz">
-          <h3>Ranz</h3>
-          <p>Security</p>
-          <div class="admin-stats">
-            <p><span id="ranz-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="ranz-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="ranz-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card">
-          <img src="source/sena.jpg" alt="Sena">
-          <h3>Sena</h3>
-          <p>Collab Member</p>
-          <div class="admin-stats">
-            <p><span id="sena-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="sena-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="sena-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card">
-          <img src="source/admin-miruki.jpg" alt="Miruki">
-          <h3>Miruki</h3>
-          <p>Collab Member</p>
-          <div class="admin-stats">
-            <p><span id="miruki-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="miruki-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="miruki-likes">...</span></p>
-          </div>
-        </div>
-
-        <div class="swiper-slide admin-card">
-          <img src="source/logo.png" alt="Miruki">
-          <h3>Tia</h3>
-          <p>Collab Member</p>
-          <div class="admin-stats">
-            <p><span id="miruki-username">...</span></p>
-            <p><strong>Followers:</strong> <span id="miruki-followers">...</span></p>
-            <p><strong>Likes:</strong> <span id="miruki-likes">...</span></p>
-          </div>
-        </div>
-
-      </div>
+      <div class="swiper-wrapper" id="admin-wrapper"></div>
     </div>
   </section>
 
@@ -323,6 +222,46 @@
   </footer>
 
   <!-- Script: Top Member Modal Handler -->
+  <script>
+    const admins = [
+      { name: 'Faa', role: 'Shared KGN', id: 'faa', img: 'source/admin-faa.png' },
+      { name: 'Vinz', role: 'Memes', id: 'vinz', img: 'source/admin-vinz.png' },
+      { name: 'Belzy', role: 'Collab / Post VT', id: 'belzy', img: 'source/admin-belzy.png' },
+      { name: 'Sidzz', role: 'Collab Member', id: 'sidz', img: 'source/admin-sidzz.png' },
+      { name: 'Rey', role: 'Collab Member', id: 'rey', img: 'source/admin-rey.png' },
+      { name: 'Fyuze', role: 'Collab Member', id: 'fyuze', img: 'source/admin-fyuze.png' },
+      { name: 'Sora Senpai', role: 'Security', id: 'sora', img: 'source/admin-sora.png' },
+
+      { name: 'Ryy Kagenou', role: 'Owner', id: 'ryy', img: 'source/admin-ryy.png', isOwner: true },
+
+      { name: 'Ranz', role: 'Security', id: 'ranz', img: 'source/admin-ranz.png' },
+      { name: 'Sena', role: 'Collab Member', id: 'sena', img: 'source/admin-sena.png' },
+      { name: 'Miruki', role: 'Collab / Editor', id: 'miruki', img: 'source/admin-miruki.png' },
+      { name: 'Tia', role: 'Collab Member', id: 'tia', img: 'source/admin-tia.png' },
+      { name: 'Wanz', role: 'Collab Member', id: 'wanz', img: 'source/admin-wanz.png' },
+      { name: 'Kram', role: 'Shared KGN', id: 'kram', img: 'source/admin-kram.png' },
+      { name: 'Han', role: 'Selection Officer', id: 'han', img: 'source/admin-han.png' },
+    ];
+
+    const wrapper = document.getElementById("admin-wrapper");
+
+    admins.forEach(({ name, role, id, img, isOwner }) => {
+      const slide = document.createElement("div");
+      slide.className = `swiper-slide admin-card${isOwner ? ' owner' : ''}`;
+      slide.innerHTML = `
+        <img src="${img}" alt="${name}">
+        <h3>${name}</h3>
+        <p class="${isOwner ? 'role-title' : ''}">${role}</p>
+        <div class="admin-stats" data-id="${id}">
+          <p><span id="${id}-username">...</span></p>
+          <p><strong>Followers:</strong> <span id="${id}-followers">...</span></p>
+          <p><strong>Likes:</strong> <span id="${id}-likes">...</span></p>
+        </div>
+      `;
+      wrapper.appendChild(slide);
+    });
+  </script>
+
   <script>
     async function openTopMember() {
       const res = await fetch('./database/topmember.json');
@@ -534,7 +473,14 @@
         { id: "sena", username: "senakayeye_" },
         { id: "rey", username: "reydwinug" },
         { id: "miruki", username: "miruke._mi" },
-        { id: "sidz", username: "sidzz_nihhh" }
+        { id: "sidz", username: "sidzz_nihhh" },
+        { id: "tia", username: "mrbeast" },
+        { id: "belzy", username: "moriciwa" },
+        { id: "wanz", username: "wanzmahiru" },
+        { id: "kram", username: "kram1028" },
+        { id: "vinz", username: "vinsukaloli" },
+        { id: "faa", username: "faexyy05taa_" },
+        { id: "han", username: "mrpudidi" }
       ];
 
       for (let i = 0; i < users.length; i++) {
@@ -556,7 +502,7 @@
           document.getElementById(`${id}-likes`).innerText = "-";
         }
 
-        await new Promise(resolve => setTimeout(resolve, 1000)); // delay 1 detik antar request
+        await new Promise(resolve => setTimeout(resolve, 500)); // delay 1 detik antar request
       }
     }
 
@@ -656,7 +602,7 @@
   <!-- SwiperJS Initialization (Admin Section Carousel) -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    const RYY_INDEX = 4;
+    const RYY_INDEX = 7;
     const swiper = new Swiper('.mySwiper', {
       loop: false,
       grabCursor: true,
