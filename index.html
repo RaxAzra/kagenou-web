@@ -226,8 +226,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=1.0.5"></script>
-
   <!-- Script: Top Member Modal Handler -->
   <script>
     const admins = [
@@ -262,7 +260,7 @@
         <h3>${name}</h3>
         <p class="${isOwner ? 'role-title' : ''}">${role}</p>
         <div class="admin-stats" data-id="${id}">
-          <p><span id="${id}-username">...</span></p>
+          <p><span id="${id}-username" class="nickname-safe">...</span></p>
           <p><strong>Followers :</strong> <span id="${id}-followers">...</span></p>
           <p><strong>Likes :</strong> <span id="${id}-likes">...</span></p>
         </div>
@@ -497,23 +495,28 @@
       for (let i = 0; i < users.length; i++) {
         const { id, username } = users[i];
 
-        document.getElementById(`${id}-username`).innerText = "Loading ...";
-        document.getElementById(`${id}-followers`).innerText = "-";
-        document.getElementById(`${id}-likes`).innerText = "-";
+        const usernameEl = document.getElementById(`${id}-username`);
+        const followersEl = document.getElementById(`${id}-followers`);
+        const likesEl = document.getElementById(`${id}-likes`);
+
+        usernameEl.innerText = "Loading ...";
+        followersEl.innerText = "-";
+        likesEl.innerText = "-";
 
         const stats = await fetchStats(username);
 
         if (stats) {
-          document.getElementById(`${id}-username`).innerText = stats.nickname;
-          document.getElementById(`${id}-followers`).innerText = formatNumber(stats.followers);
-          document.getElementById(`${id}-likes`).innerText = formatNumber(stats.likes);
+          usernameEl.innerText = stats.nickname;
+          usernameEl.classList.add("nickname-safe"); // <-- FONT FIX ⬅️⬅️⬅️
+          followersEl.innerText = formatNumber(stats.followers);
+          likesEl.innerText = formatNumber(stats.likes);
         } else {
-          document.getElementById(`${id}-username`).innerText = "-";
-          document.getElementById(`${id}-followers`).innerText = "-";
-          document.getElementById(`${id}-likes`).innerText = "-";
+          usernameEl.innerText = "-";
+          followersEl.innerText = "-";
+          likesEl.innerText = "-";
         }
 
-        await new Promise(resolve => setTimeout(resolve, 500)); // delay 1 detik antar request
+        await new Promise(resolve => setTimeout(resolve, 500)); // delay antar user
       }
     }
 
