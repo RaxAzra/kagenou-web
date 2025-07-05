@@ -225,6 +225,10 @@ body:has(:target) {
   transition: transform 0.3s ease;
 }
 
+.admin-card, .admin-card * {
+  font-family: 'Aipon', sans-serif !important;
+}
+
 .admin-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #a64eff70;
@@ -960,15 +964,6 @@ body.scroll-locked {
   overflow: hidden;
 }
 
-.admin-stats {
-  font-family: 'Noto Sans', 'Segoe UI', 'Arial', sans-serif;
-}
-
-#ryy-username {
-  font-family: 'Arial', 'Segoe UI', sans-serif !important;
-}
-
-
 .modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -1122,7 +1117,6 @@ body.scroll-locked {
 .modal-overlay.fade-out .modal-box {
   animation: fadeOutModal 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
 
 .modal-overlay.show .modal-box {
   animation: fadeInModal 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
