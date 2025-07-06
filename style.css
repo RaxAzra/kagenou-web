@@ -277,7 +277,7 @@ body:has(:target) {
 
 @font-face {
   font-family: 'Symbola';
-  src: url('font/Symbola.ttf') format('truetype');
+  src: url('font/symbola.ttf') format('truetype');
   font-display: swap;
 }
 
