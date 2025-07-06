@@ -270,26 +270,13 @@ body:has(:target) {
 }
 
 @font-face {
-  font-family: 'Unifont';
-  src: url('font/unifont.ttf') format('truetype'); /* pastikan path-nya sesuai folder kamu */
-  font-display: swap; /* supaya text tetap muncul meski font belum selesai dimuat */
-}
-
-@font-face {
   font-family: 'Symbola';
   src: url('font/symbola.ttf') format('truetype');
   font-display: swap;
 }
 
 .nickname-safe {
-  font-family: 
-    'Noto Sans',
-    'Noto Sans Symbols',
-    'Noto Sans Javanese',
-    'Noto Color Emoji',
-    'Unifont',
-    'Symbola',
-    sans-serif;
+  font-family: 'Symbola', sans-serif;
   word-break: break-word;
 }
 
@@ -1053,15 +1040,7 @@ body.scroll-locked {
 }
 
 .member-list li {
-  font-family: 
-    'Noto Sans',
-    'Noto Sans Javanese',
-    'Noto Sans Symbols',
-    'Segoe UI Symbol',
-    'Arial Unicode MS',
-    'Unifont',
-    'Symbola',
-    sans-serif !important;
+  font-family: 'Symbola', sans-serif !important;
   word-break: break-word;
 }
 
