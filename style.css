@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Aipon';
-  src: url('./font/aipon.ttf') format('truetype');
+  src: url('./font/symbola.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -225,8 +225,9 @@ body:has(:target) {
   transition: transform 0.3s ease;
 }
 
-.admin-card * {
-  font-family: 'Aipon', 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans Symbols', sans-serif !important;
+.admin-card {
+  font-family: 'Aipon', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .admin-card:hover {
@@ -243,7 +244,6 @@ body:has(:target) {
 }
 
 .admin-card h3 {
-  font-family: 'Aipon', 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.2em;
 }
@@ -251,9 +251,10 @@ body:has(:target) {
 .admin-card p {
   font-size: 0.9rem;
   color: #ccc;
+  margin: 0.3em 0;
 }
 
-.admin-card .role {
+.admin-card .role-title {
   font-weight: bold;
   color: #ffd700;
   margin-bottom: 0.5em;
@@ -268,33 +269,38 @@ body:has(:target) {
   border-radius: 10px;
 }
 
-.admin-stats p {
-  font-family: 'Aipon', 'Noto Sans', sans-serif !important;
-  margin: 0.2em 0;
-  color: #ccc;
+@font-face {
+  font-family: 'Unifont';
+  src: url('font/unifont.ttf') format('truetype'); /* pastikan path-nya sesuai folder kamu */
+  font-display: swap; /* supaya text tetap muncul meski font belum selesai dimuat */
 }
 
-.admin-stats .unicode-fix {
-  font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans Symbols', sans-serif !important;
+@font-face {
+  font-family: 'Symbola';
+  src: url('font/Symbola.ttf') format('truetype');
+  font-display: swap;
 }
 
-@layer components {
-  .unicode-safe {
-    font-family: system-ui, 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans Symbols', sans-serif !important;
-  }
+.nickname-safe {
+  font-family: 
+    'Noto Sans',
+    'Noto Sans Symbols',
+    'Noto Sans Javanese',
+    'Noto Color Emoji',
+    'Unifont',
+    'Symbola',
+    sans-serif;
+  word-break: break-word;
 }
 
+/* Tetap gunakan Aipon untuk follower & likes */
+.admin-stats p span:not(.nickname-safe) {
+  font-family: 'Aipon', sans-serif;
+}
+
+/* Follower & Likes label */
 .admin-stats strong {
   color: #a64eff;
-}
-
-.admin-stats p span {
-  font-family: 'Segoe UI Symbol', 'Noto Sans Symbols', sans-serif !important;
-}
-
-.admin-stats span {
-  font-family: 'Segoe UI', 'Arial', 'Noto Sans', sans-serif;
-  word-break: break-word;
 }
 
 /* ========== ADMIN Style ========== */
@@ -1047,12 +1053,16 @@ body.scroll-locked {
 }
 
 .member-list li {
-  font-family:
+  font-family: 
+    'Noto Sans',
+    'Noto Sans Javanese',
+    'Noto Sans Symbols',
     'Segoe UI Symbol',
     'Arial Unicode MS',
-    'Noto Sans Symbols',
-    'Noto Sans',
+    'Unifont',
+    'Symbola',
     sans-serif !important;
+  word-break: break-word;
 }
 
 .member-list li:hover {
