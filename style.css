@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'Aipon';
-  src: url('./font/aipon.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Symbola';
+  src: url('fonts/symbola.woff2') format('woff2'),
+       url('fonts/symbola.woff') format('woff');
+  font-display: swap;
 }
 
 * {
