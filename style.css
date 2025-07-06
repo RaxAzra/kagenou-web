@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Symbola';
-  src: url('fonts/symbola.woff2') format('woff2'),
-       url('fonts/symbola.woff') format('woff');
+  src: url('font/symbola.woff2') format('woff2'),
+       url('font/symbola.woff') format('woff');
   font-display: swap;
 }
 
